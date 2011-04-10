@@ -18,9 +18,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	LotroWSLotroCalc* service = [LotroWSLotroCalc service];
-    service.logging = YES;
-    [service GetRecipeNames:self action:@selector(GetRecipeNamesHandler:) profession: @"Cook" tier: @"Apprentice"];
+	//LotroWSLotroCalc* service = [LotroWSLotroCalc service];
+    //service.logging = YES;
+    //[service GetRecipeNames:self action:@selector(GetRecipeNamesHandler:) profession: @"Cook" tier: @"Apprentice"];
     
     
     // Override point for customization after application launch.
@@ -31,7 +31,7 @@
 }
 
 // Handle the response from GetRecipeNames.
-
+/*
 - (void) GetRecipeNamesHandler: (id) value {
     
 	// Handle errors
@@ -54,6 +54,7 @@
          NSLog(@"%@\n", ret);
     }
 }
+ */
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

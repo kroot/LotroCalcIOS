@@ -167,7 +167,6 @@
 		2654A13E1352117000C397A0 = {
 			isa = PBXGroup;
 			children = (
-				2654A1D913521AA400C397A0 /* SystemConfiguration.framework */,
 				2654A1531352117100C397A0 /* LotroCalc */,
 				2654A1731352117200C397A0 /* LotroCalcTests */,
 				2654A14C1352117100C397A0 /* Frameworks */,
@@ -187,6 +186,7 @@
 		2654A14C1352117100C397A0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2654A1D913521AA400C397A0 /* SystemConfiguration.framework */,
 				2654A14D1352117100C397A0 /* UIKit.framework */,
 				2654A14F1352117100C397A0 /* Foundation.framework */,
 				2654A1511352117100C397A0 /* CoreGraphics.framework */,
@@ -548,7 +548,12 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LotroCalc/LotroCalc-Prefix.pch";
-				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				HEADER_SEARCH_PATHS = (
+					/usr/include/libxml2,
+					./Generated,
+					./TouchXML,
+					./Soap,
+				);
 				INFOPLIST_FILE = "LotroCalc/LotroCalc-Info.plist";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -563,7 +568,12 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LotroCalc/LotroCalc-Prefix.pch";
-				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				HEADER_SEARCH_PATHS = (
+					/usr/include/libxml2,
+					./Generated,
+					./TouchXML,
+					./Soap,
+				);
 				INFOPLIST_FILE = "LotroCalc/LotroCalc-Info.plist";
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RootViewController : UITableViewController {
-
+@interface RootViewController : UITableViewController <UITabBarDelegate, UITableViewDataSource> 
+{
+    NSArray *_Professions;
 }
 
+    @property (nonatomic, retain) NSArray *Professions;
 
 @end

@@ -7,13 +7,58 @@
 //
 
 #import "RootViewController.h"
+#import "LotroWSServices.h"
 
 @implementation RootViewController
 
+@synthesize Professions;
+
+
 - (void)viewDidLoad
 {
+    /*
+    LotroWSLotroCalc* service = [LotroWSLotroCalc service];
+    service.logging = YES;
+    [service GetRecipeNames:self action:@selector(GetRecipeNamesHandler:) profession: @"Cook" tier: @"Apprentice"];
+     */
+    
     [super viewDidLoad];
+    
+    self.Professions = [[NSMutableArray alloc] initWithObjects:
+                        @"Cook",  
+                        @"Jeweler", 
+                        @"Metalsmith", 
+                        @"Scholar", 
+                        @"Tailor", 
+                        @"Weaponsmith", 
+                        @"Woodworker", 
+                        nil];
 }
+
+// Handle the response from GetRecipeNames.
+/*
+- (void) GetRecipeNamesHandler: (id) value {
+    
+	// Handle errors
+	if([value isKindOfClass:[NSError class]]) {
+		NSLog(@"%@", value);
+		return;
+	}
+    
+	// Handle faults
+	if([value isKindOfClass:[SoapFault class]]) {
+		NSLog(@"%@", value);
+		return;
+	}				
+    
+	// Do something with the NSMutableArray* result
+    NSMutableArray* result = (NSMutableArray*)value;
+	//NSLog(@"GetRecipeNames returned the value: %@", result);
+    for (NSMutableString *ret in result) {
+        NSLog(@"%@\n", ret);
+    }
+}
+ */
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -51,7 +96,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return [self.Professions count];
 }
 
 // Customize the appearance of table view cells.
@@ -65,6 +110,7 @@
     }
 
     // Configure the cell.
+    cell.textLabel.text = [self.Professions objectAtIndex:[indexPath row]];
     return cell;
 }
 
@@ -131,6 +177,8 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
+    
+    self.Professions = nil;
 
     // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
     // For example: self.myOutlet = nil;
@@ -138,6 +186,7 @@
 
 - (void)dealloc
 {
+    [Professions release];
     [super dealloc];
 }
 
