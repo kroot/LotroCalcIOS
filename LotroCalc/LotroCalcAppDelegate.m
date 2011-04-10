@@ -7,6 +7,7 @@
 //
 
 #import "LotroCalcAppDelegate.h"
+#import "LotroWSServices.h"
 
 @implementation LotroCalcAppDelegate
 
@@ -17,11 +18,41 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	LotroWSLotroCalc* service = [LotroWSLotroCalc service];
+    service.logging = YES;
+    [service GetRecipeNames:self action:@selector(GetRecipeNamesHandler:) profession: @"Cook" tier: @"Apprentice"];
+    
+    
     // Override point for customization after application launch.
     // Add the navigation controller's view to the window and display.
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+// Handle the response from GetRecipeNames.
+
+- (void) GetRecipeNamesHandler: (id) value {
+    
+	// Handle errors
+	if([value isKindOfClass:[NSError class]]) {
+		NSLog(@"%@", value);
+		return;
+	}
+    
+	// Handle faults
+	if([value isKindOfClass:[SoapFault class]]) {
+		NSLog(@"%@", value);
+		return;
+	}				
+    
+    
+	// Do something with the NSMutableArray* result
+    NSMutableArray* result = (NSMutableArray*)value;
+	//NSLog(@"GetRecipeNames returned the value: %@", result);
+    for (NSMutableString *ret in result) {
+         NSLog(@"%@\n", ret);
+    }
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

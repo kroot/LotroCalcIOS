@@ -22,6 +22,33 @@
 		2654A1781352117200C397A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2654A1761352117200C397A0 /* InfoPlist.strings */; };
 		2654A17B1352117200C397A0 /* LotroCalcTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 2654A17A1352117200C397A0 /* LotroCalcTests.h */; };
 		2654A17D1352117200C397A0 /* LotroCalcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A17C1352117200C397A0 /* LotroCalcTests.m */; };
+		2654A1931352126900C397A0 /* LotroWSArrayOfString.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1881352126900C397A0 /* LotroWSArrayOfString.m */; };
+		2654A1941352126900C397A0 /* LotroWSArrayOfWebIngredient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A18A1352126900C397A0 /* LotroWSArrayOfWebIngredient.m */; };
+		2654A1951352126900C397A0 /* LotroWSLotroCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A18C1352126900C397A0 /* LotroWSLotroCalc.m */; };
+		2654A1961352126900C397A0 /* LotroWSServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A18E1352126900C397A0 /* LotroWSServices.m */; };
+		2654A1971352126900C397A0 /* LotroWSWebIngredient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1901352126900C397A0 /* LotroWSWebIngredient.m */; };
+		2654A1981352126900C397A0 /* Soap+Prefix.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1921352126900C397A0 /* Soap+Prefix.m */; };
+		2654A1C51352127C00C397A0 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A19B1352127C00C397A0 /* NSData+Base64.m */; };
+		2654A1C61352127C00C397A0 /* NSMutableArray+Soap.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A19D1352127C00C397A0 /* NSMutableArray+Soap.m */; };
+		2654A1C71352127C00C397A0 /* Soap.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A19F1352127C00C397A0 /* Soap.m */; };
+		2654A1C81352127C00C397A0 /* SoapArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1A11352127C00C397A0 /* SoapArray.m */; };
+		2654A1C91352127C00C397A0 /* SoapDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1A41352127C00C397A0 /* SoapDictionary.m */; };
+		2654A1CA1352127C00C397A0 /* SoapFault.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1A61352127C00C397A0 /* SoapFault.m */; };
+		2654A1CB1352127C00C397A0 /* SoapHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1A81352127C00C397A0 /* SoapHandler.m */; };
+		2654A1CC1352127C00C397A0 /* SoapLiteral.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1AA1352127C00C397A0 /* SoapLiteral.m */; };
+		2654A1CD1352127C00C397A0 /* SoapNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1AC1352127C00C397A0 /* SoapNil.m */; };
+		2654A1CE1352127C00C397A0 /* SoapObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1AE1352127C00C397A0 /* SoapObject.m */; };
+		2654A1CF1352127C00C397A0 /* SoapParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1B01352127C00C397A0 /* SoapParameter.m */; };
+		2654A1D01352127C00C397A0 /* SoapReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1B21352127C00C397A0 /* SoapReachability.m */; };
+		2654A1D11352127C00C397A0 /* SoapRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1B41352127C00C397A0 /* SoapRequest.m */; };
+		2654A1D21352127C00C397A0 /* SoapService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1B61352127C00C397A0 /* SoapService.m */; };
+		2654A1D31352127C00C397A0 /* CXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1B91352127C00C397A0 /* CXMLDocument.m */; };
+		2654A1D41352127C00C397A0 /* CXMLDocument_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1BB1352127C00C397A0 /* CXMLDocument_PrivateExtensions.m */; };
+		2654A1D51352127C00C397A0 /* CXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1BD1352127C00C397A0 /* CXMLElement.m */; };
+		2654A1D61352127C00C397A0 /* CXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1BF1352127C00C397A0 /* CXMLNode.m */; };
+		2654A1D71352127C00C397A0 /* CXMLNode_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1C11352127C00C397A0 /* CXMLNode_PrivateExtensions.m */; };
+		2654A1D81352127C00C397A0 /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1C31352127C00C397A0 /* CXMLNode_XPathExtensions.m */; };
+		2654A1DA13521AA400C397A0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2654A1D913521AA400C397A0 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,22 +66,77 @@
 		2654A14D1352117100C397A0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2654A14F1352117100C397A0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		2654A1511352117100C397A0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		2654A1551352117100C397A0 /* LotroCalc-Info.plist */ = {isa = PBXFileReference; path = "LotroCalc-Info.plist"; sourceTree = "<group>"; };
+		2654A1551352117100C397A0 /* LotroCalc-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LotroCalc-Info.plist"; sourceTree = "<group>"; };
 		2654A1571352117100C397A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2654A1591352117100C397A0 /* LotroCalc-Prefix.pch */ = {isa = PBXFileReference; path = "LotroCalc-Prefix.pch"; sourceTree = "<group>"; };
+		2654A1591352117100C397A0 /* LotroCalc-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LotroCalc-Prefix.pch"; sourceTree = "<group>"; };
 		2654A15A1352117100C397A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		2654A15C1352117100C397A0 /* LotroCalcAppDelegate.h */ = {isa = PBXFileReference; path = LotroCalcAppDelegate.h; sourceTree = "<group>"; };
+		2654A15C1352117100C397A0 /* LotroCalcAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LotroCalcAppDelegate.h; sourceTree = "<group>"; };
 		2654A15D1352117100C397A0 /* LotroCalcAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LotroCalcAppDelegate.m; sourceTree = "<group>"; };
 		2654A1601352117100C397A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		2654A1621352117100C397A0 /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		2654A1621352117100C397A0 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		2654A1631352117100C397A0 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		2654A1661352117100C397A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
 		2654A16D1352117200C397A0 /* LotroCalcTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LotroCalcTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2654A1751352117200C397A0 /* LotroCalcTests-Info.plist */ = {isa = PBXFileReference; path = "LotroCalcTests-Info.plist"; sourceTree = "<group>"; };
+		2654A1751352117200C397A0 /* LotroCalcTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LotroCalcTests-Info.plist"; sourceTree = "<group>"; };
 		2654A1771352117200C397A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2654A1791352117200C397A0 /* LotroCalcTests-Prefix.pch */ = {isa = PBXFileReference; path = "LotroCalcTests-Prefix.pch"; sourceTree = "<group>"; };
+		2654A1791352117200C397A0 /* LotroCalcTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LotroCalcTests-Prefix.pch"; sourceTree = "<group>"; };
 		2654A17A1352117200C397A0 /* LotroCalcTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LotroCalcTests.h; sourceTree = "<group>"; };
 		2654A17C1352117200C397A0 /* LotroCalcTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LotroCalcTests.m; sourceTree = "<group>"; };
+		2654A1871352126900C397A0 /* LotroWSArrayOfString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotroWSArrayOfString.h; sourceTree = "<group>"; };
+		2654A1881352126900C397A0 /* LotroWSArrayOfString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotroWSArrayOfString.m; sourceTree = "<group>"; };
+		2654A1891352126900C397A0 /* LotroWSArrayOfWebIngredient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotroWSArrayOfWebIngredient.h; sourceTree = "<group>"; };
+		2654A18A1352126900C397A0 /* LotroWSArrayOfWebIngredient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotroWSArrayOfWebIngredient.m; sourceTree = "<group>"; };
+		2654A18B1352126900C397A0 /* LotroWSLotroCalc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotroWSLotroCalc.h; sourceTree = "<group>"; };
+		2654A18C1352126900C397A0 /* LotroWSLotroCalc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotroWSLotroCalc.m; sourceTree = "<group>"; };
+		2654A18D1352126900C397A0 /* LotroWSServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotroWSServices.h; sourceTree = "<group>"; };
+		2654A18E1352126900C397A0 /* LotroWSServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotroWSServices.m; sourceTree = "<group>"; };
+		2654A18F1352126900C397A0 /* LotroWSWebIngredient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotroWSWebIngredient.h; sourceTree = "<group>"; };
+		2654A1901352126900C397A0 /* LotroWSWebIngredient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotroWSWebIngredient.m; sourceTree = "<group>"; };
+		2654A1911352126900C397A0 /* Soap+Prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Soap+Prefix.h"; sourceTree = "<group>"; };
+		2654A1921352126900C397A0 /* Soap+Prefix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Soap+Prefix.m"; sourceTree = "<group>"; };
+		2654A19A1352127C00C397A0 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		2654A19B1352127C00C397A0 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		2654A19C1352127C00C397A0 /* NSMutableArray+Soap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Soap.h"; sourceTree = "<group>"; };
+		2654A19D1352127C00C397A0 /* NSMutableArray+Soap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Soap.m"; sourceTree = "<group>"; };
+		2654A19E1352127C00C397A0 /* Soap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Soap.h; sourceTree = "<group>"; };
+		2654A19F1352127C00C397A0 /* Soap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Soap.m; sourceTree = "<group>"; };
+		2654A1A01352127C00C397A0 /* SoapArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapArray.h; sourceTree = "<group>"; };
+		2654A1A11352127C00C397A0 /* SoapArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapArray.m; sourceTree = "<group>"; };
+		2654A1A21352127C00C397A0 /* SoapDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapDelegate.h; sourceTree = "<group>"; };
+		2654A1A31352127C00C397A0 /* SoapDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapDictionary.h; sourceTree = "<group>"; };
+		2654A1A41352127C00C397A0 /* SoapDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapDictionary.m; sourceTree = "<group>"; };
+		2654A1A51352127C00C397A0 /* SoapFault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapFault.h; sourceTree = "<group>"; };
+		2654A1A61352127C00C397A0 /* SoapFault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapFault.m; sourceTree = "<group>"; };
+		2654A1A71352127C00C397A0 /* SoapHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapHandler.h; sourceTree = "<group>"; };
+		2654A1A81352127C00C397A0 /* SoapHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapHandler.m; sourceTree = "<group>"; };
+		2654A1A91352127C00C397A0 /* SoapLiteral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapLiteral.h; sourceTree = "<group>"; };
+		2654A1AA1352127C00C397A0 /* SoapLiteral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapLiteral.m; sourceTree = "<group>"; };
+		2654A1AB1352127C00C397A0 /* SoapNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapNil.h; sourceTree = "<group>"; };
+		2654A1AC1352127C00C397A0 /* SoapNil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapNil.m; sourceTree = "<group>"; };
+		2654A1AD1352127C00C397A0 /* SoapObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapObject.h; sourceTree = "<group>"; };
+		2654A1AE1352127C00C397A0 /* SoapObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapObject.m; sourceTree = "<group>"; };
+		2654A1AF1352127C00C397A0 /* SoapParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapParameter.h; sourceTree = "<group>"; };
+		2654A1B01352127C00C397A0 /* SoapParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapParameter.m; sourceTree = "<group>"; };
+		2654A1B11352127C00C397A0 /* SoapReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapReachability.h; sourceTree = "<group>"; };
+		2654A1B21352127C00C397A0 /* SoapReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapReachability.m; sourceTree = "<group>"; };
+		2654A1B31352127C00C397A0 /* SoapRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapRequest.h; sourceTree = "<group>"; };
+		2654A1B41352127C00C397A0 /* SoapRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapRequest.m; sourceTree = "<group>"; };
+		2654A1B51352127C00C397A0 /* SoapService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapService.h; sourceTree = "<group>"; };
+		2654A1B61352127C00C397A0 /* SoapService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapService.m; sourceTree = "<group>"; };
+		2654A1B81352127C00C397A0 /* CXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument.h; sourceTree = "<group>"; };
+		2654A1B91352127C00C397A0 /* CXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument.m; sourceTree = "<group>"; };
+		2654A1BA1352127C00C397A0 /* CXMLDocument_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_PrivateExtensions.h; sourceTree = "<group>"; };
+		2654A1BB1352127C00C397A0 /* CXMLDocument_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument_PrivateExtensions.m; sourceTree = "<group>"; };
+		2654A1BC1352127C00C397A0 /* CXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement.h; sourceTree = "<group>"; };
+		2654A1BD1352127C00C397A0 /* CXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement.m; sourceTree = "<group>"; };
+		2654A1BE1352127C00C397A0 /* CXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode.h; sourceTree = "<group>"; };
+		2654A1BF1352127C00C397A0 /* CXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode.m; sourceTree = "<group>"; };
+		2654A1C01352127C00C397A0 /* CXMLNode_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_PrivateExtensions.h; sourceTree = "<group>"; };
+		2654A1C11352127C00C397A0 /* CXMLNode_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_PrivateExtensions.m; sourceTree = "<group>"; };
+		2654A1C21352127C00C397A0 /* CXMLNode_XPathExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_XPathExtensions.h; sourceTree = "<group>"; };
+		2654A1C31352127C00C397A0 /* CXMLNode_XPathExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_XPathExtensions.m; sourceTree = "<group>"; };
+		2654A1C41352127C00C397A0 /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
+		2654A1D913521AA400C397A0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2654A1DA13521AA400C397A0 /* SystemConfiguration.framework in Frameworks */,
 				2654A14E1352117100C397A0 /* UIKit.framework in Frameworks */,
 				2654A1501352117100C397A0 /* Foundation.framework in Frameworks */,
 				2654A1521352117100C397A0 /* CoreGraphics.framework in Frameworks */,
@@ -84,6 +167,7 @@
 		2654A13E1352117000C397A0 = {
 			isa = PBXGroup;
 			children = (
+				2654A1D913521AA400C397A0 /* SystemConfiguration.framework */,
 				2654A1531352117100C397A0 /* LotroCalc */,
 				2654A1731352117200C397A0 /* LotroCalcTests */,
 				2654A14C1352117100C397A0 /* Frameworks */,
@@ -113,6 +197,9 @@
 		2654A1531352117100C397A0 /* LotroCalc */ = {
 			isa = PBXGroup;
 			children = (
+				2654A1991352127C00C397A0 /* Soap */,
+				2654A1B71352127C00C397A0 /* TouchXML */,
+				2654A1861352126900C397A0 /* Generated */,
 				2654A15C1352117100C397A0 /* LotroCalcAppDelegate.h */,
 				2654A15D1352117100C397A0 /* LotroCalcAppDelegate.m */,
 				2654A15F1352117100C397A0 /* MainWindow.xib */,
@@ -153,6 +240,81 @@
 				2654A1791352117200C397A0 /* LotroCalcTests-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2654A1861352126900C397A0 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				2654A1871352126900C397A0 /* LotroWSArrayOfString.h */,
+				2654A1881352126900C397A0 /* LotroWSArrayOfString.m */,
+				2654A1891352126900C397A0 /* LotroWSArrayOfWebIngredient.h */,
+				2654A18A1352126900C397A0 /* LotroWSArrayOfWebIngredient.m */,
+				2654A18B1352126900C397A0 /* LotroWSLotroCalc.h */,
+				2654A18C1352126900C397A0 /* LotroWSLotroCalc.m */,
+				2654A18D1352126900C397A0 /* LotroWSServices.h */,
+				2654A18E1352126900C397A0 /* LotroWSServices.m */,
+				2654A18F1352126900C397A0 /* LotroWSWebIngredient.h */,
+				2654A1901352126900C397A0 /* LotroWSWebIngredient.m */,
+				2654A1911352126900C397A0 /* Soap+Prefix.h */,
+				2654A1921352126900C397A0 /* Soap+Prefix.m */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		2654A1991352127C00C397A0 /* Soap */ = {
+			isa = PBXGroup;
+			children = (
+				2654A19A1352127C00C397A0 /* NSData+Base64.h */,
+				2654A19B1352127C00C397A0 /* NSData+Base64.m */,
+				2654A19C1352127C00C397A0 /* NSMutableArray+Soap.h */,
+				2654A19D1352127C00C397A0 /* NSMutableArray+Soap.m */,
+				2654A19E1352127C00C397A0 /* Soap.h */,
+				2654A19F1352127C00C397A0 /* Soap.m */,
+				2654A1A01352127C00C397A0 /* SoapArray.h */,
+				2654A1A11352127C00C397A0 /* SoapArray.m */,
+				2654A1A21352127C00C397A0 /* SoapDelegate.h */,
+				2654A1A31352127C00C397A0 /* SoapDictionary.h */,
+				2654A1A41352127C00C397A0 /* SoapDictionary.m */,
+				2654A1A51352127C00C397A0 /* SoapFault.h */,
+				2654A1A61352127C00C397A0 /* SoapFault.m */,
+				2654A1A71352127C00C397A0 /* SoapHandler.h */,
+				2654A1A81352127C00C397A0 /* SoapHandler.m */,
+				2654A1A91352127C00C397A0 /* SoapLiteral.h */,
+				2654A1AA1352127C00C397A0 /* SoapLiteral.m */,
+				2654A1AB1352127C00C397A0 /* SoapNil.h */,
+				2654A1AC1352127C00C397A0 /* SoapNil.m */,
+				2654A1AD1352127C00C397A0 /* SoapObject.h */,
+				2654A1AE1352127C00C397A0 /* SoapObject.m */,
+				2654A1AF1352127C00C397A0 /* SoapParameter.h */,
+				2654A1B01352127C00C397A0 /* SoapParameter.m */,
+				2654A1B11352127C00C397A0 /* SoapReachability.h */,
+				2654A1B21352127C00C397A0 /* SoapReachability.m */,
+				2654A1B31352127C00C397A0 /* SoapRequest.h */,
+				2654A1B41352127C00C397A0 /* SoapRequest.m */,
+				2654A1B51352127C00C397A0 /* SoapService.h */,
+				2654A1B61352127C00C397A0 /* SoapService.m */,
+			);
+			path = Soap;
+			sourceTree = "<group>";
+		};
+		2654A1B71352127C00C397A0 /* TouchXML */ = {
+			isa = PBXGroup;
+			children = (
+				2654A1B81352127C00C397A0 /* CXMLDocument.h */,
+				2654A1B91352127C00C397A0 /* CXMLDocument.m */,
+				2654A1BA1352127C00C397A0 /* CXMLDocument_PrivateExtensions.h */,
+				2654A1BB1352127C00C397A0 /* CXMLDocument_PrivateExtensions.m */,
+				2654A1BC1352127C00C397A0 /* CXMLElement.h */,
+				2654A1BD1352127C00C397A0 /* CXMLElement.m */,
+				2654A1BE1352127C00C397A0 /* CXMLNode.h */,
+				2654A1BF1352127C00C397A0 /* CXMLNode.m */,
+				2654A1C01352127C00C397A0 /* CXMLNode_PrivateExtensions.h */,
+				2654A1C11352127C00C397A0 /* CXMLNode_PrivateExtensions.m */,
+				2654A1C21352127C00C397A0 /* CXMLNode_XPathExtensions.h */,
+				2654A1C31352127C00C397A0 /* CXMLNode_XPathExtensions.m */,
+				2654A1C41352127C00C397A0 /* TouchXML.h */,
+			);
+			path = TouchXML;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,6 +425,32 @@
 				2654A15B1352117100C397A0 /* main.m in Sources */,
 				2654A15E1352117100C397A0 /* LotroCalcAppDelegate.m in Sources */,
 				2654A1641352117100C397A0 /* RootViewController.m in Sources */,
+				2654A1931352126900C397A0 /* LotroWSArrayOfString.m in Sources */,
+				2654A1941352126900C397A0 /* LotroWSArrayOfWebIngredient.m in Sources */,
+				2654A1951352126900C397A0 /* LotroWSLotroCalc.m in Sources */,
+				2654A1961352126900C397A0 /* LotroWSServices.m in Sources */,
+				2654A1971352126900C397A0 /* LotroWSWebIngredient.m in Sources */,
+				2654A1981352126900C397A0 /* Soap+Prefix.m in Sources */,
+				2654A1C51352127C00C397A0 /* NSData+Base64.m in Sources */,
+				2654A1C61352127C00C397A0 /* NSMutableArray+Soap.m in Sources */,
+				2654A1C71352127C00C397A0 /* Soap.m in Sources */,
+				2654A1C81352127C00C397A0 /* SoapArray.m in Sources */,
+				2654A1C91352127C00C397A0 /* SoapDictionary.m in Sources */,
+				2654A1CA1352127C00C397A0 /* SoapFault.m in Sources */,
+				2654A1CB1352127C00C397A0 /* SoapHandler.m in Sources */,
+				2654A1CC1352127C00C397A0 /* SoapLiteral.m in Sources */,
+				2654A1CD1352127C00C397A0 /* SoapNil.m in Sources */,
+				2654A1CE1352127C00C397A0 /* SoapObject.m in Sources */,
+				2654A1CF1352127C00C397A0 /* SoapParameter.m in Sources */,
+				2654A1D01352127C00C397A0 /* SoapReachability.m in Sources */,
+				2654A1D11352127C00C397A0 /* SoapRequest.m in Sources */,
+				2654A1D21352127C00C397A0 /* SoapService.m in Sources */,
+				2654A1D31352127C00C397A0 /* CXMLDocument.m in Sources */,
+				2654A1D41352127C00C397A0 /* CXMLDocument_PrivateExtensions.m in Sources */,
+				2654A1D51352127C00C397A0 /* CXMLElement.m in Sources */,
+				2654A1D61352127C00C397A0 /* CXMLNode.m in Sources */,
+				2654A1D71352127C00C397A0 /* CXMLNode_PrivateExtensions.m in Sources */,
+				2654A1D81352127C00C397A0 /* CXMLNode_XPathExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,7 +548,9 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LotroCalc/LotroCalc-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "LotroCalc/LotroCalc-Info.plist";
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -373,7 +563,9 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LotroCalc/LotroCalc-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "LotroCalc/LotroCalc-Info.plist";
+				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
