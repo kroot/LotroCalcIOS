@@ -49,6 +49,8 @@
 		2654A1D71352127C00C397A0 /* CXMLNode_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1C11352127C00C397A0 /* CXMLNode_PrivateExtensions.m */; };
 		2654A1D81352127C00C397A0 /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1C31352127C00C397A0 /* CXMLNode_XPathExtensions.m */; };
 		2654A1DA13521AA400C397A0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2654A1D913521AA400C397A0 /* SystemConfiguration.framework */; };
+		2654A1E313527A8F00C397A0 /* TierViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1E113527A8F00C397A0 /* TierViewController.m */; };
+		26EB4D2713528A9A00BEA2A9 /* TierViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26EB4D2513528A9A00BEA2A9 /* TierViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +139,9 @@
 		2654A1C31352127C00C397A0 /* CXMLNode_XPathExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_XPathExtensions.m; sourceTree = "<group>"; };
 		2654A1C41352127C00C397A0 /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
 		2654A1D913521AA400C397A0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2654A1E013527A8F00C397A0 /* TierViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TierViewController.h; sourceTree = "<group>"; };
+		2654A1E113527A8F00C397A0 /* TierViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TierViewController.m; sourceTree = "<group>"; };
+		26EB4D2513528A9A00BEA2A9 /* TierViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TierViewController.xib; path = ../TierViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +212,9 @@
 				2654A1631352117100C397A0 /* RootViewController.m */,
 				2654A1651352117100C397A0 /* RootViewController.xib */,
 				2654A1541352117100C397A0 /* Supporting Files */,
+				2654A1E013527A8F00C397A0 /* TierViewController.h */,
+				2654A1E113527A8F00C397A0 /* TierViewController.m */,
+				26EB4D2513528A9A00BEA2A9 /* TierViewController.xib */,
 			);
 			path = LotroCalc;
 			sourceTree = "<group>";
@@ -387,6 +395,7 @@
 				2654A1581352117100C397A0 /* InfoPlist.strings in Resources */,
 				2654A1611352117100C397A0 /* MainWindow.xib in Resources */,
 				2654A1671352117100C397A0 /* RootViewController.xib in Resources */,
+				26EB4D2713528A9A00BEA2A9 /* TierViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,6 +460,7 @@
 				2654A1D61352127C00C397A0 /* CXMLNode.m in Sources */,
 				2654A1D71352127C00C397A0 /* CXMLNode_PrivateExtensions.m in Sources */,
 				2654A1D81352127C00C397A0 /* CXMLNode_XPathExtensions.m in Sources */,
+				2654A1E313527A8F00C397A0 /* TierViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,6 +655,7 @@
 				2654A1821352117200C397A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2654A1831352117200C397A0 /* Build configuration list for PBXNativeTarget "LotroCalcTests" */ = {
 			isa = XCConfigurationList;
@@ -653,6 +664,7 @@
 				2654A1851352117200C397A0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
