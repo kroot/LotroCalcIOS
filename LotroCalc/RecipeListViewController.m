@@ -13,8 +13,10 @@
 @implementation RecipeListViewController
 
 @synthesize recipeNames = _recipeNames;
+//@synthesize UITableView recipeView;
 @synthesize profession;
 @synthesize tier;
+@synthesize activityView;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -51,6 +53,7 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    recipeView.hidden = true;
 }
 
 - (void)viewDidUnload
@@ -62,8 +65,10 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    
-    self.recipeNames = [[NSMutableArray alloc] initWithObjects:
+    //self.tableView..hidden = true;
+    recipeView.hidden = TRUE;
+
+    /* self.recipeNames = [[NSMutableArray alloc] initWithObjects:
                   @"x", 
                   @"y", 
                   @"z",
@@ -72,6 +77,7 @@
                   @"Supreme",
                   nil
                   ];
+     */
     
     LotroWSLotroCalc* service = [LotroWSLotroCalc service];
     service.logging = YES;
@@ -82,9 +88,27 @@
     [super viewWillAppear:animated];
     
     [self.tableView reloadData];
+    
+    self.title = @"Loading recipe names...";
+    
+    activityView = [[UIView alloc] init];
+    activityView.frame = self.tableView.frame;
+    // save this view somewhere
+    
+    UIActivityIndicatorView *ac = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    CGRect frame = activityView.frame;
+    ac.center = CGPointMake(frame.size.width/2, frame.size.height/2);
+    [activityView addSubview:ac];    
+    
+    [ac startAnimating];
+    [ac release];
+    
+    [self.tableView addSubview:activityView];
+    [activityView release];
 }
 
 - (void) GetRecipeNamesHandler: (id) value {
+    //return;
     
 	// Handle errors
 	if([value isKindOfClass:[NSError class]]) {
@@ -101,10 +125,20 @@
     
 	// Do something with the NSMutableArray* result
     NSMutableArray* result = (NSMutableArray*)value;
+    /*
 	NSLog(@"GetRecipeNames returned the value: %@", result);
     for (NSMutableString *ret in result) {
         NSLog(@"%@\n", ret);
+        
     }
+     */
+    
+    self.recipeNames = result;
+    [self.tableView reloadData];
+    //self.tableView.hidden = false;
+    
+    [activityView removeFromSuperview];
+    self.title = @"Recipe Names";
 }
 
 - (void)viewDidAppear:(BOOL)animated

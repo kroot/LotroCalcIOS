@@ -13,10 +13,13 @@
     @private NSArray *_recipeNames;
     @private NSString *profession;
     @private NSString *tier;
+    IBOutlet UITableView *recipeView;
 }
 
 @property (nonatomic, retain) NSArray *recipeNames;
 @property (copy) NSString *profession;
 @property (copy) NSString *tier;
+//@property IBOutlet UITableView *recipeView;
+@property (nonatomic, retain) UIView *activityView;
 
 @end
