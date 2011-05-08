@@ -7,6 +7,7 @@
 //
 
 #import "RecipeListViewController.h"
+#import "LotroWSServices.h"
 
 
 @implementation RecipeListViewController
@@ -72,9 +73,38 @@
                   nil
                   ];
     
+    LotroWSLotroCalc* service = [LotroWSLotroCalc service];
+    service.logging = YES;
+    [service GetRecipeNames:self action:@selector(GetRecipeNamesHandler:) 
+                 profession: self.profession 
+                       tier: self.tier];
+    
     [super viewWillAppear:animated];
     
     [self.tableView reloadData];
+}
+
+- (void) GetRecipeNamesHandler: (id) value {
+    
+	// Handle errors
+	if([value isKindOfClass:[NSError class]]) {
+		NSLog(@"%@", value);
+		return;
+	}
+    
+	// Handle faults
+	if([value isKindOfClass:[SoapFault class]]) {
+		NSLog(@"%@", value);
+		return;
+	}				
+    
+    
+	// Do something with the NSMutableArray* result
+    NSMutableArray* result = (NSMutableArray*)value;
+	NSLog(@"GetRecipeNames returned the value: %@", result);
+    for (NSMutableString *ret in result) {
+        NSLog(@"%@\n", ret);
+    }
 }
 
 - (void)viewDidAppear:(BOOL)animated
