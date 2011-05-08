@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2610DD741376348C00E23057 /* RecipeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2610DD721376348C00E23057 /* RecipeListViewController.m */; };
+		2610DD751376348C00E23057 /* RecipeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2610DD731376348C00E23057 /* RecipeListViewController.xib */; };
+		2610DD7A137734C700E23057 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2610DD78137734C700E23057 /* MainWindow-iPad.xib */; };
 		2654A14E1352117100C397A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2654A14D1352117100C397A0 /* UIKit.framework */; };
 		2654A1501352117100C397A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2654A14F1352117100C397A0 /* Foundation.framework */; };
 		2654A1521352117100C397A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2654A1511352117100C397A0 /* CoreGraphics.framework */; };
@@ -64,6 +67,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2610DD711376348C00E23057 /* RecipeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeListViewController.h; sourceTree = "<group>"; };
+		2610DD721376348C00E23057 /* RecipeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeListViewController.m; sourceTree = "<group>"; };
+		2610DD731376348C00E23057 /* RecipeListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeListViewController.xib; sourceTree = "<group>"; };
+		2610DD79137734C700E23057 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "iPad/en.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		2654A1491352117100C397A0 /* LotroCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LotroCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2654A14D1352117100C397A0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2654A14F1352117100C397A0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -169,6 +176,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2610DD77137734C500E23057 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				2610DD78137734C700E23057 /* MainWindow-iPad.xib */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
 		2654A13E1352117000C397A0 = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +217,7 @@
 		2654A1531352117100C397A0 /* LotroCalc */ = {
 			isa = PBXGroup;
 			children = (
+				2610DD77137734C500E23057 /* iPad */,
 				2654A1991352127C00C397A0 /* Soap */,
 				2654A1B71352127C00C397A0 /* TouchXML */,
 				2654A1861352126900C397A0 /* Generated */,
@@ -215,6 +231,9 @@
 				2654A1E013527A8F00C397A0 /* TierViewController.h */,
 				2654A1E113527A8F00C397A0 /* TierViewController.m */,
 				26EB4D2513528A9A00BEA2A9 /* TierViewController.xib */,
+				2610DD711376348C00E23057 /* RecipeListViewController.h */,
+				2610DD721376348C00E23057 /* RecipeListViewController.m */,
+				2610DD731376348C00E23057 /* RecipeListViewController.xib */,
 			);
 			path = LotroCalc;
 			sourceTree = "<group>";
@@ -396,6 +415,8 @@
 				2654A1611352117100C397A0 /* MainWindow.xib in Resources */,
 				2654A1671352117100C397A0 /* RootViewController.xib in Resources */,
 				26EB4D2713528A9A00BEA2A9 /* TierViewController.xib in Resources */,
+				2610DD751376348C00E23057 /* RecipeListViewController.xib in Resources */,
+				2610DD7A137734C700E23057 /* MainWindow-iPad.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +482,7 @@
 				2654A1D71352127C00C397A0 /* CXMLNode_PrivateExtensions.m in Sources */,
 				2654A1D81352127C00C397A0 /* CXMLNode_XPathExtensions.m in Sources */,
 				2654A1E313527A8F00C397A0 /* TierViewController.m in Sources */,
+				2610DD741376348C00E23057 /* RecipeListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +505,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		2610DD78137734C700E23057 /* MainWindow-iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2610DD79137734C700E23057 /* en */,
+			);
+			name = "MainWindow-iPad.xib";
+			sourceTree = "<group>";
+		};
 		2654A1561352117100C397A0 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -565,8 +595,10 @@
 					./Soap,
 				);
 				INFOPLIST_FILE = "LotroCalc/LotroCalc-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -585,8 +617,10 @@
 					./Soap,
 				);
 				INFOPLIST_FILE = "LotroCalc/LotroCalc-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
