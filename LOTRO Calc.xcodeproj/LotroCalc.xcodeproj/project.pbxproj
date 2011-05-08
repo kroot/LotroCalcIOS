@@ -1,0 +1,710 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2610DD741376348C00E23057 /* RecipeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2610DD721376348C00E23057 /* RecipeListViewController.m */; };
+		2610DD751376348C00E23057 /* RecipeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2610DD731376348C00E23057 /* RecipeListViewController.xib */; };
+		2610DD7A137734C700E23057 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2610DD78137734C700E23057 /* MainWindow-iPad.xib */; };
+		2654A14E1352117100C397A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2654A14D1352117100C397A0 /* UIKit.framework */; };
+		2654A1501352117100C397A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2654A14F1352117100C397A0 /* Foundation.framework */; };
+		2654A1521352117100C397A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2654A1511352117100C397A0 /* CoreGraphics.framework */; };
+		2654A1581352117100C397A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2654A1561352117100C397A0 /* InfoPlist.strings */; };
+		2654A15B1352117100C397A0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A15A1352117100C397A0 /* main.m */; };
+		2654A15E1352117100C397A0 /* LotroCalcAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A15D1352117100C397A0 /* LotroCalcAppDelegate.m */; };
+		2654A1611352117100C397A0 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2654A15F1352117100C397A0 /* MainWindow.xib */; };
+		2654A1641352117100C397A0 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1631352117100C397A0 /* RootViewController.m */; };
+		2654A1671352117100C397A0 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2654A1651352117100C397A0 /* RootViewController.xib */; };
+		2654A16E1352117200C397A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2654A14D1352117100C397A0 /* UIKit.framework */; };
+		2654A16F1352117200C397A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2654A14F1352117100C397A0 /* Foundation.framework */; };
+		2654A1701352117200C397A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2654A1511352117100C397A0 /* CoreGraphics.framework */; };
+		2654A1781352117200C397A0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2654A1761352117200C397A0 /* InfoPlist.strings */; };
+		2654A17B1352117200C397A0 /* LotroCalcTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 2654A17A1352117200C397A0 /* LotroCalcTests.h */; };
+		2654A17D1352117200C397A0 /* LotroCalcTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A17C1352117200C397A0 /* LotroCalcTests.m */; };
+		2654A1931352126900C397A0 /* LotroWSArrayOfString.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1881352126900C397A0 /* LotroWSArrayOfString.m */; };
+		2654A1941352126900C397A0 /* LotroWSArrayOfWebIngredient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A18A1352126900C397A0 /* LotroWSArrayOfWebIngredient.m */; };
+		2654A1951352126900C397A0 /* LotroWSLotroCalc.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A18C1352126900C397A0 /* LotroWSLotroCalc.m */; };
+		2654A1961352126900C397A0 /* LotroWSServices.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A18E1352126900C397A0 /* LotroWSServices.m */; };
+		2654A1971352126900C397A0 /* LotroWSWebIngredient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1901352126900C397A0 /* LotroWSWebIngredient.m */; };
+		2654A1981352126900C397A0 /* Soap+Prefix.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1921352126900C397A0 /* Soap+Prefix.m */; };
+		2654A1C51352127C00C397A0 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A19B1352127C00C397A0 /* NSData+Base64.m */; };
+		2654A1C61352127C00C397A0 /* NSMutableArray+Soap.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A19D1352127C00C397A0 /* NSMutableArray+Soap.m */; };
+		2654A1C71352127C00C397A0 /* Soap.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A19F1352127C00C397A0 /* Soap.m */; };
+		2654A1C81352127C00C397A0 /* SoapArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1A11352127C00C397A0 /* SoapArray.m */; };
+		2654A1C91352127C00C397A0 /* SoapDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1A41352127C00C397A0 /* SoapDictionary.m */; };
+		2654A1CA1352127C00C397A0 /* SoapFault.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1A61352127C00C397A0 /* SoapFault.m */; };
+		2654A1CB1352127C00C397A0 /* SoapHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1A81352127C00C397A0 /* SoapHandler.m */; };
+		2654A1CC1352127C00C397A0 /* SoapLiteral.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1AA1352127C00C397A0 /* SoapLiteral.m */; };
+		2654A1CD1352127C00C397A0 /* SoapNil.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1AC1352127C00C397A0 /* SoapNil.m */; };
+		2654A1CE1352127C00C397A0 /* SoapObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1AE1352127C00C397A0 /* SoapObject.m */; };
+		2654A1CF1352127C00C397A0 /* SoapParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1B01352127C00C397A0 /* SoapParameter.m */; };
+		2654A1D01352127C00C397A0 /* SoapReachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1B21352127C00C397A0 /* SoapReachability.m */; };
+		2654A1D11352127C00C397A0 /* SoapRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1B41352127C00C397A0 /* SoapRequest.m */; };
+		2654A1D21352127C00C397A0 /* SoapService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1B61352127C00C397A0 /* SoapService.m */; };
+		2654A1D31352127C00C397A0 /* CXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1B91352127C00C397A0 /* CXMLDocument.m */; };
+		2654A1D41352127C00C397A0 /* CXMLDocument_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1BB1352127C00C397A0 /* CXMLDocument_PrivateExtensions.m */; };
+		2654A1D51352127C00C397A0 /* CXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1BD1352127C00C397A0 /* CXMLElement.m */; };
+		2654A1D61352127C00C397A0 /* CXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1BF1352127C00C397A0 /* CXMLNode.m */; };
+		2654A1D71352127C00C397A0 /* CXMLNode_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1C11352127C00C397A0 /* CXMLNode_PrivateExtensions.m */; };
+		2654A1D81352127C00C397A0 /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1C31352127C00C397A0 /* CXMLNode_XPathExtensions.m */; };
+		2654A1DA13521AA400C397A0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2654A1D913521AA400C397A0 /* SystemConfiguration.framework */; };
+		2654A1E313527A8F00C397A0 /* TierViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1E113527A8F00C397A0 /* TierViewController.m */; };
+		26EB4D2713528A9A00BEA2A9 /* TierViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26EB4D2513528A9A00BEA2A9 /* TierViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2654A1711352117200C397A0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2654A1401352117000C397A0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2654A1481352117000C397A0;
+			remoteInfo = LotroCalc;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2610DD711376348C00E23057 /* RecipeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeListViewController.h; sourceTree = "<group>"; };
+		2610DD721376348C00E23057 /* RecipeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeListViewController.m; sourceTree = "<group>"; };
+		2610DD731376348C00E23057 /* RecipeListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeListViewController.xib; sourceTree = "<group>"; };
+		2610DD79137734C700E23057 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "iPad/en.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		2654A1491352117100C397A0 /* LotroCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LotroCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2654A14D1352117100C397A0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		2654A14F1352117100C397A0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2654A1511352117100C397A0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		2654A1551352117100C397A0 /* LotroCalc-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LotroCalc-Info.plist"; sourceTree = "<group>"; };
+		2654A1571352117100C397A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2654A1591352117100C397A0 /* LotroCalc-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LotroCalc-Prefix.pch"; sourceTree = "<group>"; };
+		2654A15A1352117100C397A0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2654A15C1352117100C397A0 /* LotroCalcAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LotroCalcAppDelegate.h; sourceTree = "<group>"; };
+		2654A15D1352117100C397A0 /* LotroCalcAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LotroCalcAppDelegate.m; sourceTree = "<group>"; };
+		2654A1601352117100C397A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		2654A1621352117100C397A0 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		2654A1631352117100C397A0 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		2654A1661352117100C397A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		2654A16D1352117200C397A0 /* LotroCalcTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LotroCalcTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2654A1751352117200C397A0 /* LotroCalcTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LotroCalcTests-Info.plist"; sourceTree = "<group>"; };
+		2654A1771352117200C397A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2654A1791352117200C397A0 /* LotroCalcTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LotroCalcTests-Prefix.pch"; sourceTree = "<group>"; };
+		2654A17A1352117200C397A0 /* LotroCalcTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LotroCalcTests.h; sourceTree = "<group>"; };
+		2654A17C1352117200C397A0 /* LotroCalcTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LotroCalcTests.m; sourceTree = "<group>"; };
+		2654A1871352126900C397A0 /* LotroWSArrayOfString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotroWSArrayOfString.h; sourceTree = "<group>"; };
+		2654A1881352126900C397A0 /* LotroWSArrayOfString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotroWSArrayOfString.m; sourceTree = "<group>"; };
+		2654A1891352126900C397A0 /* LotroWSArrayOfWebIngredient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotroWSArrayOfWebIngredient.h; sourceTree = "<group>"; };
+		2654A18A1352126900C397A0 /* LotroWSArrayOfWebIngredient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotroWSArrayOfWebIngredient.m; sourceTree = "<group>"; };
+		2654A18B1352126900C397A0 /* LotroWSLotroCalc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotroWSLotroCalc.h; sourceTree = "<group>"; };
+		2654A18C1352126900C397A0 /* LotroWSLotroCalc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotroWSLotroCalc.m; sourceTree = "<group>"; };
+		2654A18D1352126900C397A0 /* LotroWSServices.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotroWSServices.h; sourceTree = "<group>"; };
+		2654A18E1352126900C397A0 /* LotroWSServices.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotroWSServices.m; sourceTree = "<group>"; };
+		2654A18F1352126900C397A0 /* LotroWSWebIngredient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LotroWSWebIngredient.h; sourceTree = "<group>"; };
+		2654A1901352126900C397A0 /* LotroWSWebIngredient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LotroWSWebIngredient.m; sourceTree = "<group>"; };
+		2654A1911352126900C397A0 /* Soap+Prefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Soap+Prefix.h"; sourceTree = "<group>"; };
+		2654A1921352126900C397A0 /* Soap+Prefix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Soap+Prefix.m"; sourceTree = "<group>"; };
+		2654A19A1352127C00C397A0 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		2654A19B1352127C00C397A0 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		2654A19C1352127C00C397A0 /* NSMutableArray+Soap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Soap.h"; sourceTree = "<group>"; };
+		2654A19D1352127C00C397A0 /* NSMutableArray+Soap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Soap.m"; sourceTree = "<group>"; };
+		2654A19E1352127C00C397A0 /* Soap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Soap.h; sourceTree = "<group>"; };
+		2654A19F1352127C00C397A0 /* Soap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Soap.m; sourceTree = "<group>"; };
+		2654A1A01352127C00C397A0 /* SoapArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapArray.h; sourceTree = "<group>"; };
+		2654A1A11352127C00C397A0 /* SoapArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapArray.m; sourceTree = "<group>"; };
+		2654A1A21352127C00C397A0 /* SoapDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapDelegate.h; sourceTree = "<group>"; };
+		2654A1A31352127C00C397A0 /* SoapDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapDictionary.h; sourceTree = "<group>"; };
+		2654A1A41352127C00C397A0 /* SoapDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapDictionary.m; sourceTree = "<group>"; };
+		2654A1A51352127C00C397A0 /* SoapFault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapFault.h; sourceTree = "<group>"; };
+		2654A1A61352127C00C397A0 /* SoapFault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapFault.m; sourceTree = "<group>"; };
+		2654A1A71352127C00C397A0 /* SoapHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapHandler.h; sourceTree = "<group>"; };
+		2654A1A81352127C00C397A0 /* SoapHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapHandler.m; sourceTree = "<group>"; };
+		2654A1A91352127C00C397A0 /* SoapLiteral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapLiteral.h; sourceTree = "<group>"; };
+		2654A1AA1352127C00C397A0 /* SoapLiteral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapLiteral.m; sourceTree = "<group>"; };
+		2654A1AB1352127C00C397A0 /* SoapNil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapNil.h; sourceTree = "<group>"; };
+		2654A1AC1352127C00C397A0 /* SoapNil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapNil.m; sourceTree = "<group>"; };
+		2654A1AD1352127C00C397A0 /* SoapObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapObject.h; sourceTree = "<group>"; };
+		2654A1AE1352127C00C397A0 /* SoapObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapObject.m; sourceTree = "<group>"; };
+		2654A1AF1352127C00C397A0 /* SoapParameter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapParameter.h; sourceTree = "<group>"; };
+		2654A1B01352127C00C397A0 /* SoapParameter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapParameter.m; sourceTree = "<group>"; };
+		2654A1B11352127C00C397A0 /* SoapReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapReachability.h; sourceTree = "<group>"; };
+		2654A1B21352127C00C397A0 /* SoapReachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapReachability.m; sourceTree = "<group>"; };
+		2654A1B31352127C00C397A0 /* SoapRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapRequest.h; sourceTree = "<group>"; };
+		2654A1B41352127C00C397A0 /* SoapRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapRequest.m; sourceTree = "<group>"; };
+		2654A1B51352127C00C397A0 /* SoapService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoapService.h; sourceTree = "<group>"; };
+		2654A1B61352127C00C397A0 /* SoapService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoapService.m; sourceTree = "<group>"; };
+		2654A1B81352127C00C397A0 /* CXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument.h; sourceTree = "<group>"; };
+		2654A1B91352127C00C397A0 /* CXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument.m; sourceTree = "<group>"; };
+		2654A1BA1352127C00C397A0 /* CXMLDocument_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_PrivateExtensions.h; sourceTree = "<group>"; };
+		2654A1BB1352127C00C397A0 /* CXMLDocument_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument_PrivateExtensions.m; sourceTree = "<group>"; };
+		2654A1BC1352127C00C397A0 /* CXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement.h; sourceTree = "<group>"; };
+		2654A1BD1352127C00C397A0 /* CXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement.m; sourceTree = "<group>"; };
+		2654A1BE1352127C00C397A0 /* CXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode.h; sourceTree = "<group>"; };
+		2654A1BF1352127C00C397A0 /* CXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode.m; sourceTree = "<group>"; };
+		2654A1C01352127C00C397A0 /* CXMLNode_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_PrivateExtensions.h; sourceTree = "<group>"; };
+		2654A1C11352127C00C397A0 /* CXMLNode_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_PrivateExtensions.m; sourceTree = "<group>"; };
+		2654A1C21352127C00C397A0 /* CXMLNode_XPathExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_XPathExtensions.h; sourceTree = "<group>"; };
+		2654A1C31352127C00C397A0 /* CXMLNode_XPathExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_XPathExtensions.m; sourceTree = "<group>"; };
+		2654A1C41352127C00C397A0 /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
+		2654A1D913521AA400C397A0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		2654A1E013527A8F00C397A0 /* TierViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TierViewController.h; sourceTree = "<group>"; };
+		2654A1E113527A8F00C397A0 /* TierViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TierViewController.m; sourceTree = "<group>"; };
+		26EB4D2513528A9A00BEA2A9 /* TierViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TierViewController.xib; path = ../TierViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2654A1461352117000C397A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2654A1DA13521AA400C397A0 /* SystemConfiguration.framework in Frameworks */,
+				2654A14E1352117100C397A0 /* UIKit.framework in Frameworks */,
+				2654A1501352117100C397A0 /* Foundation.framework in Frameworks */,
+				2654A1521352117100C397A0 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2654A1691352117200C397A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2654A16E1352117200C397A0 /* UIKit.framework in Frameworks */,
+				2654A16F1352117200C397A0 /* Foundation.framework in Frameworks */,
+				2654A1701352117200C397A0 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2610DD77137734C500E23057 /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+				2610DD78137734C700E23057 /* MainWindow-iPad.xib */,
+			);
+			name = iPad;
+			sourceTree = "<group>";
+		};
+		2654A13E1352117000C397A0 = {
+			isa = PBXGroup;
+			children = (
+				2654A1531352117100C397A0 /* LotroCalc */,
+				2654A1731352117200C397A0 /* LotroCalcTests */,
+				2654A14C1352117100C397A0 /* Frameworks */,
+				2654A14A1352117100C397A0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2654A14A1352117100C397A0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2654A1491352117100C397A0 /* LotroCalc.app */,
+				2654A16D1352117200C397A0 /* LotroCalcTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2654A14C1352117100C397A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2654A1D913521AA400C397A0 /* SystemConfiguration.framework */,
+				2654A14D1352117100C397A0 /* UIKit.framework */,
+				2654A14F1352117100C397A0 /* Foundation.framework */,
+				2654A1511352117100C397A0 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2654A1531352117100C397A0 /* LotroCalc */ = {
+			isa = PBXGroup;
+			children = (
+				2610DD77137734C500E23057 /* iPad */,
+				2654A1991352127C00C397A0 /* Soap */,
+				2654A1B71352127C00C397A0 /* TouchXML */,
+				2654A1861352126900C397A0 /* Generated */,
+				2654A15C1352117100C397A0 /* LotroCalcAppDelegate.h */,
+				2654A15D1352117100C397A0 /* LotroCalcAppDelegate.m */,
+				2654A15F1352117100C397A0 /* MainWindow.xib */,
+				2654A1621352117100C397A0 /* RootViewController.h */,
+				2654A1631352117100C397A0 /* RootViewController.m */,
+				2654A1651352117100C397A0 /* RootViewController.xib */,
+				2654A1541352117100C397A0 /* Supporting Files */,
+				2654A1E013527A8F00C397A0 /* TierViewController.h */,
+				2654A1E113527A8F00C397A0 /* TierViewController.m */,
+				26EB4D2513528A9A00BEA2A9 /* TierViewController.xib */,
+				2610DD711376348C00E23057 /* RecipeListViewController.h */,
+				2610DD721376348C00E23057 /* RecipeListViewController.m */,
+				2610DD731376348C00E23057 /* RecipeListViewController.xib */,
+			);
+			path = LotroCalc;
+			sourceTree = "<group>";
+		};
+		2654A1541352117100C397A0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2654A1551352117100C397A0 /* LotroCalc-Info.plist */,
+				2654A1561352117100C397A0 /* InfoPlist.strings */,
+				2654A1591352117100C397A0 /* LotroCalc-Prefix.pch */,
+				2654A15A1352117100C397A0 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2654A1731352117200C397A0 /* LotroCalcTests */ = {
+			isa = PBXGroup;
+			children = (
+				2654A17A1352117200C397A0 /* LotroCalcTests.h */,
+				2654A17C1352117200C397A0 /* LotroCalcTests.m */,
+				2654A1741352117200C397A0 /* Supporting Files */,
+			);
+			path = LotroCalcTests;
+			sourceTree = "<group>";
+		};
+		2654A1741352117200C397A0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2654A1751352117200C397A0 /* LotroCalcTests-Info.plist */,
+				2654A1761352117200C397A0 /* InfoPlist.strings */,
+				2654A1791352117200C397A0 /* LotroCalcTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2654A1861352126900C397A0 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				2654A1871352126900C397A0 /* LotroWSArrayOfString.h */,
+				2654A1881352126900C397A0 /* LotroWSArrayOfString.m */,
+				2654A1891352126900C397A0 /* LotroWSArrayOfWebIngredient.h */,
+				2654A18A1352126900C397A0 /* LotroWSArrayOfWebIngredient.m */,
+				2654A18B1352126900C397A0 /* LotroWSLotroCalc.h */,
+				2654A18C1352126900C397A0 /* LotroWSLotroCalc.m */,
+				2654A18D1352126900C397A0 /* LotroWSServices.h */,
+				2654A18E1352126900C397A0 /* LotroWSServices.m */,
+				2654A18F1352126900C397A0 /* LotroWSWebIngredient.h */,
+				2654A1901352126900C397A0 /* LotroWSWebIngredient.m */,
+				2654A1911352126900C397A0 /* Soap+Prefix.h */,
+				2654A1921352126900C397A0 /* Soap+Prefix.m */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		2654A1991352127C00C397A0 /* Soap */ = {
+			isa = PBXGroup;
+			children = (
+				2654A19A1352127C00C397A0 /* NSData+Base64.h */,
+				2654A19B1352127C00C397A0 /* NSData+Base64.m */,
+				2654A19C1352127C00C397A0 /* NSMutableArray+Soap.h */,
+				2654A19D1352127C00C397A0 /* NSMutableArray+Soap.m */,
+				2654A19E1352127C00C397A0 /* Soap.h */,
+				2654A19F1352127C00C397A0 /* Soap.m */,
+				2654A1A01352127C00C397A0 /* SoapArray.h */,
+				2654A1A11352127C00C397A0 /* SoapArray.m */,
+				2654A1A21352127C00C397A0 /* SoapDelegate.h */,
+				2654A1A31352127C00C397A0 /* SoapDictionary.h */,
+				2654A1A41352127C00C397A0 /* SoapDictionary.m */,
+				2654A1A51352127C00C397A0 /* SoapFault.h */,
+				2654A1A61352127C00C397A0 /* SoapFault.m */,
+				2654A1A71352127C00C397A0 /* SoapHandler.h */,
+				2654A1A81352127C00C397A0 /* SoapHandler.m */,
+				2654A1A91352127C00C397A0 /* SoapLiteral.h */,
+				2654A1AA1352127C00C397A0 /* SoapLiteral.m */,
+				2654A1AB1352127C00C397A0 /* SoapNil.h */,
+				2654A1AC1352127C00C397A0 /* SoapNil.m */,
+				2654A1AD1352127C00C397A0 /* SoapObject.h */,
+				2654A1AE1352127C00C397A0 /* SoapObject.m */,
+				2654A1AF1352127C00C397A0 /* SoapParameter.h */,
+				2654A1B01352127C00C397A0 /* SoapParameter.m */,
+				2654A1B11352127C00C397A0 /* SoapReachability.h */,
+				2654A1B21352127C00C397A0 /* SoapReachability.m */,
+				2654A1B31352127C00C397A0 /* SoapRequest.h */,
+				2654A1B41352127C00C397A0 /* SoapRequest.m */,
+				2654A1B51352127C00C397A0 /* SoapService.h */,
+				2654A1B61352127C00C397A0 /* SoapService.m */,
+			);
+			path = Soap;
+			sourceTree = "<group>";
+		};
+		2654A1B71352127C00C397A0 /* TouchXML */ = {
+			isa = PBXGroup;
+			children = (
+				2654A1B81352127C00C397A0 /* CXMLDocument.h */,
+				2654A1B91352127C00C397A0 /* CXMLDocument.m */,
+				2654A1BA1352127C00C397A0 /* CXMLDocument_PrivateExtensions.h */,
+				2654A1BB1352127C00C397A0 /* CXMLDocument_PrivateExtensions.m */,
+				2654A1BC1352127C00C397A0 /* CXMLElement.h */,
+				2654A1BD1352127C00C397A0 /* CXMLElement.m */,
+				2654A1BE1352127C00C397A0 /* CXMLNode.h */,
+				2654A1BF1352127C00C397A0 /* CXMLNode.m */,
+				2654A1C01352127C00C397A0 /* CXMLNode_PrivateExtensions.h */,
+				2654A1C11352127C00C397A0 /* CXMLNode_PrivateExtensions.m */,
+				2654A1C21352127C00C397A0 /* CXMLNode_XPathExtensions.h */,
+				2654A1C31352127C00C397A0 /* CXMLNode_XPathExtensions.m */,
+				2654A1C41352127C00C397A0 /* TouchXML.h */,
+			);
+			path = TouchXML;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2654A1481352117000C397A0 /* LotroCalc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2654A1801352117200C397A0 /* Build configuration list for PBXNativeTarget "LotroCalc" */;
+			buildPhases = (
+				2654A1451352117000C397A0 /* Sources */,
+				2654A1461352117000C397A0 /* Frameworks */,
+				2654A1471352117000C397A0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LotroCalc;
+			productName = LotroCalc;
+			productReference = 2654A1491352117100C397A0 /* LotroCalc.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2654A16C1352117200C397A0 /* LotroCalcTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2654A1831352117200C397A0 /* Build configuration list for PBXNativeTarget "LotroCalcTests" */;
+			buildPhases = (
+				2654A1681352117200C397A0 /* Sources */,
+				2654A1691352117200C397A0 /* Frameworks */,
+				2654A16A1352117200C397A0 /* Resources */,
+				2654A16B1352117200C397A0 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2654A1721352117200C397A0 /* PBXTargetDependency */,
+			);
+			name = LotroCalcTests;
+			productName = LotroCalcTests;
+			productReference = 2654A16D1352117200C397A0 /* LotroCalcTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2654A1401352117000C397A0 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 2654A1431352117000C397A0 /* Build configuration list for PBXProject "LotroCalc" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2654A13E1352117000C397A0;
+			productRefGroup = 2654A14A1352117100C397A0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2654A1481352117000C397A0 /* LotroCalc */,
+				2654A16C1352117200C397A0 /* LotroCalcTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2654A1471352117000C397A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2654A1581352117100C397A0 /* InfoPlist.strings in Resources */,
+				2654A1611352117100C397A0 /* MainWindow.xib in Resources */,
+				2654A1671352117100C397A0 /* RootViewController.xib in Resources */,
+				26EB4D2713528A9A00BEA2A9 /* TierViewController.xib in Resources */,
+				2610DD751376348C00E23057 /* RecipeListViewController.xib in Resources */,
+				2610DD7A137734C700E23057 /* MainWindow-iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2654A16A1352117200C397A0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2654A1781352117200C397A0 /* InfoPlist.strings in Resources */,
+				2654A17B1352117200C397A0 /* LotroCalcTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2654A16B1352117200C397A0 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2654A1451352117000C397A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2654A15B1352117100C397A0 /* main.m in Sources */,
+				2654A15E1352117100C397A0 /* LotroCalcAppDelegate.m in Sources */,
+				2654A1641352117100C397A0 /* RootViewController.m in Sources */,
+				2654A1931352126900C397A0 /* LotroWSArrayOfString.m in Sources */,
+				2654A1941352126900C397A0 /* LotroWSArrayOfWebIngredient.m in Sources */,
+				2654A1951352126900C397A0 /* LotroWSLotroCalc.m in Sources */,
+				2654A1961352126900C397A0 /* LotroWSServices.m in Sources */,
+				2654A1971352126900C397A0 /* LotroWSWebIngredient.m in Sources */,
+				2654A1981352126900C397A0 /* Soap+Prefix.m in Sources */,
+				2654A1C51352127C00C397A0 /* NSData+Base64.m in Sources */,
+				2654A1C61352127C00C397A0 /* NSMutableArray+Soap.m in Sources */,
+				2654A1C71352127C00C397A0 /* Soap.m in Sources */,
+				2654A1C81352127C00C397A0 /* SoapArray.m in Sources */,
+				2654A1C91352127C00C397A0 /* SoapDictionary.m in Sources */,
+				2654A1CA1352127C00C397A0 /* SoapFault.m in Sources */,
+				2654A1CB1352127C00C397A0 /* SoapHandler.m in Sources */,
+				2654A1CC1352127C00C397A0 /* SoapLiteral.m in Sources */,
+				2654A1CD1352127C00C397A0 /* SoapNil.m in Sources */,
+				2654A1CE1352127C00C397A0 /* SoapObject.m in Sources */,
+				2654A1CF1352127C00C397A0 /* SoapParameter.m in Sources */,
+				2654A1D01352127C00C397A0 /* SoapReachability.m in Sources */,
+				2654A1D11352127C00C397A0 /* SoapRequest.m in Sources */,
+				2654A1D21352127C00C397A0 /* SoapService.m in Sources */,
+				2654A1D31352127C00C397A0 /* CXMLDocument.m in Sources */,
+				2654A1D41352127C00C397A0 /* CXMLDocument_PrivateExtensions.m in Sources */,
+				2654A1D51352127C00C397A0 /* CXMLElement.m in Sources */,
+				2654A1D61352127C00C397A0 /* CXMLNode.m in Sources */,
+				2654A1D71352127C00C397A0 /* CXMLNode_PrivateExtensions.m in Sources */,
+				2654A1D81352127C00C397A0 /* CXMLNode_XPathExtensions.m in Sources */,
+				2654A1E313527A8F00C397A0 /* TierViewController.m in Sources */,
+				2610DD741376348C00E23057 /* RecipeListViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2654A1681352117200C397A0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2654A17D1352117200C397A0 /* LotroCalcTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2654A1721352117200C397A0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2654A1481352117000C397A0 /* LotroCalc */;
+			targetProxy = 2654A1711352117200C397A0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2610DD78137734C700E23057 /* MainWindow-iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2610DD79137734C700E23057 /* en */,
+			);
+			name = "MainWindow-iPad.xib";
+			sourceTree = "<group>";
+		};
+		2654A1561352117100C397A0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2654A1571352117100C397A0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2654A15F1352117100C397A0 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2654A1601352117100C397A0 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		2654A1651352117100C397A0 /* RootViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2654A1661352117100C397A0 /* en */,
+			);
+			name = RootViewController.xib;
+			sourceTree = "<group>";
+		};
+		2654A1761352117200C397A0 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2654A1771352117200C397A0 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2654A17E1352117200C397A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kenneth Root (E4JU4V2CQC)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PROVISIONING_PROFILE = "AD41F5DF-65DD-4AA7-B962-F36FF09266FA";
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		2654A17F1352117200C397A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Kenneth Root (E4JU4V2CQC)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "AD41F5DF-65DD-4AA7-B962-F36FF09266FA";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		2654A1811352117200C397A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LotroCalc/LotroCalc-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					/usr/include/libxml2,
+					./Generated,
+					./TouchXML,
+					./Soap,
+				);
+				INFOPLIST_FILE = "LotroCalc/LotroCalc-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2654A1821352117200C397A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LotroCalc/LotroCalc-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					/usr/include/libxml2,
+					./Generated,
+					./TouchXML,
+					./Soap,
+				);
+				INFOPLIST_FILE = "LotroCalc/LotroCalc-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_LDFLAGS = "-lxml2";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		2654A1841352117200C397A0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LotroCalc.app/LotroCalc";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LotroCalcTests/LotroCalcTests-Prefix.pch";
+				INFOPLIST_FILE = "LotroCalcTests/LotroCalcTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		2654A1851352117200C397A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/LotroCalc.app/LotroCalc";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "LotroCalcTests/LotroCalcTests-Prefix.pch";
+				INFOPLIST_FILE = "LotroCalcTests/LotroCalcTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2654A1431352117000C397A0 /* Build configuration list for PBXProject "LotroCalc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2654A17E1352117200C397A0 /* Debug */,
+				2654A17F1352117200C397A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2654A1801352117200C397A0 /* Build configuration list for PBXNativeTarget "LotroCalc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2654A1811352117200C397A0 /* Debug */,
+				2654A1821352117200C397A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2654A1831352117200C397A0 /* Build configuration list for PBXNativeTarget "LotroCalcTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2654A1841352117200C397A0 /* Debug */,
+				2654A1851352117200C397A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2654A1401352117000C397A0 /* Project object */;
+}
