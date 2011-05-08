@@ -12,6 +12,8 @@
 @implementation TierViewController
 
 @synthesize tiers = Tiers;
+@synthesize recipeListViewController = _recipeListViewController;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -24,10 +26,19 @@
 
 - (void) viewWillAppear:(BOOL)animated 
 {
-    self.tiers = [[NSArray alloc] initWithObjects:@"Journeyman", @"Apprentice", nil];
+    self.tiers = [[NSMutableArray alloc] initWithObjects:
+                  @"Apprentice", 
+                  @"Journeyman", 
+                  @"Expert",
+                  @"Artisan",
+                  @"Master",
+                  @"Supreme",
+                  nil
+                  ];
     
     //[super viewWillAppear:<#animated#>];
     [self.tableView reloadData];
+    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -75,7 +86,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section    
 {
-    NSLog(@"count=%d", [self.tiers count]);
     return [self.tiers count];
 }
 
@@ -95,6 +105,22 @@
                              
     cell.textLabel.text = [self.tiers objectAtIndex:[indexPath row]];
     return cell;                             
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    //[<#DetailViewController#>] *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+    // ...
+    // Pass the selected object to the new view controller.
+    //[self.navigationController pushViewController:self.tierController animated:YES];
+
+    _recipeListViewController = [[UIViewController alloc] init];
+
+    // Pass the selected object to the new view controller.
+    [self.navigationController pushViewController:(UITableViewController *)self.recipeListViewController animated:YES];
+
+	
 }
 
 

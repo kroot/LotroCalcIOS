@@ -12,8 +12,8 @@
 
 @interface RootViewController : UITableViewController <UITabBarDelegate, UITableViewDataSource> 
 {
-    NSArray *_Professions;
-    TierViewController *tierController;
+    @private NSArray *_professions;
+    @private TierViewController *_tierController;
 }
 
 @property (nonatomic, retain) NSArray *Professions;

@@ -7,12 +7,13 @@
 //
 
 #import "RootViewController.h"
+#import "TierViewController.h"
 #import "LotroWSServices.h"
 
 @implementation RootViewController
 
-@synthesize Professions;
-@synthesize tierController;
+@synthesize Professions = _professions;
+@synthesize tierController = _tierController;
 
 
 - (void)viewDidLoad
@@ -165,7 +166,12 @@
     //[<#DetailViewController#>] *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
     // ...
     // Pass the selected object to the new view controller.
-    [self.navigationController pushViewController:self.tierController animated:YES];
+    _tierController = [[TierViewController alloc] init];
+    
+    //_tierController.title = self.Professions objectAtIndex:[indexPath row];
+    _tierController.title = @"Tiers";
+    
+    [self.navigationController pushViewController:(UITableViewController *)self.tierController animated:YES];
     //[detailViewController release];
 	
 }
@@ -190,7 +196,7 @@
 
 - (void)dealloc
 {
-    [Professions release];
+    [_professions release];
     [super dealloc];
 }
 

@@ -25,6 +25,9 @@
     
     // Override point for customization after application launch.
     // Add the navigation controller's view to the window and display.
+    
+    //_navigationController.title = @"Professions";
+    
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     return YES;

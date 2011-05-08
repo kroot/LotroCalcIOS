@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "RecipeListViewController.h"
 
 @interface TierViewController : UITableViewController {
     @private NSArray *Tiers;
+    @private RecipeListViewController *_recipeListViewController;
 }
 
 @property (nonatomic, retain) NSArray *tiers;
+@property (nonatomic, retain) IBOutlet RecipeListViewController *recipeListViewController;
+
 
 @end
