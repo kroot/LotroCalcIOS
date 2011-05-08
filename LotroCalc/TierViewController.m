@@ -13,6 +13,7 @@
 
 @synthesize tiers = Tiers;
 @synthesize recipeListViewController = _recipeListViewController;
+@synthesize profession;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -69,6 +70,7 @@
     self.tiers = nil;
     
     // Do any additional setup after loading the view from its nib.
+    //self.title = self.profession;
 }
 
 - (void)viewDidUnload
@@ -115,7 +117,15 @@
     // Pass the selected object to the new view controller.
     //[self.navigationController pushViewController:self.tierController animated:YES];
 
-    _recipeListViewController = [[UIViewController alloc] init];
+    _recipeListViewController = [[RecipeListViewController alloc] init];
+    
+    NSUInteger row = [indexPath row];
+    NSString *newText = [Tiers objectAtIndex:row];
+    _recipeListViewController.navigationItem.title = newText;
+    
+    _recipeListViewController.profession = self.profession;
+    _recipeListViewController.tier = newText;
+
 
     // Pass the selected object to the new view controller.
     [self.navigationController pushViewController:(UITableViewController *)self.recipeListViewController animated:YES];

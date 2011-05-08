@@ -12,6 +12,8 @@
 @implementation RecipeListViewController
 
 @synthesize recipeNames = _recipeNames;
+@synthesize profession;
+@synthesize tier;
 
 
 - (id)initWithStyle:(UITableViewStyle)style

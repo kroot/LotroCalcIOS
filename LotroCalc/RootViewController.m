@@ -169,7 +169,12 @@
     _tierController = [[TierViewController alloc] init];
     
     //_tierController.title = self.Professions objectAtIndex:[indexPath row];
-    _tierController.title = @"Tiers";
+    
+    NSUInteger row = [indexPath row];
+    NSString *newText = [_professions objectAtIndex:row];
+     _tierController.title = newText;
+   
+    _tierController.profession = newText;
     
     [self.navigationController pushViewController:(UITableViewController *)self.tierController animated:YES];
     //[detailViewController release];

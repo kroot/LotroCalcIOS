@@ -11,8 +11,12 @@
 
 @interface RecipeListViewController : UITableViewController {
     @private NSArray *_recipeNames;
+    @private NSString *profession;
+    @private NSString *tier;
 }
 
 @property (nonatomic, retain) NSArray *recipeNames;
+@property (copy) NSString *profession;
+@property (copy) NSString *tier;
 
 @end

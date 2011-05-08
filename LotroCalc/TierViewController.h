@@ -12,10 +12,12 @@
 @interface TierViewController : UITableViewController {
     @private NSArray *Tiers;
     @private RecipeListViewController *_recipeListViewController;
+    @private NSString *profession;
 }
 
 @property (nonatomic, retain) NSArray *tiers;
 @property (nonatomic, retain) IBOutlet RecipeListViewController *recipeListViewController;
+@property (copy) NSString *profession;
 
 
 @end
