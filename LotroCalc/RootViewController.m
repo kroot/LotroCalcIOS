@@ -12,6 +12,7 @@
 @implementation RootViewController
 
 @synthesize Professions;
+@synthesize tierController;
 
 
 - (void)viewDidLoad
@@ -32,8 +33,11 @@
                         @"Tailor", 
                         @"Weaponsmith", 
                         @"Woodworker", 
-                        nil];
+                        nil
+                        ];
 }
+
+
 
 // Handle the response from GetRecipeNames.
 /*
@@ -157,13 +161,13 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+    
+    //[<#DetailViewController#>] *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
     // ...
     // Pass the selected object to the new view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
-	*/
+    [self.navigationController pushViewController:self.tierController animated:YES];
+    //[detailViewController release];
+	
 }
 
 - (void)didReceiveMemoryWarning
