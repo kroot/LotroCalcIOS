@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2609ED771377640A008CA0EC /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 2609ED741377640A008CA0EC /* NSData+Base64.m */; };
+		2609ED781377640A008CA0EC /* StringEncryption.m in Sources */ = {isa = PBXBuildFile; fileRef = 2609ED761377640A008CA0EC /* StringEncryption.m */; };
 		2610DD741376348C00E23057 /* RecipeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2610DD721376348C00E23057 /* RecipeListViewController.m */; };
 		2610DD751376348C00E23057 /* RecipeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2610DD731376348C00E23057 /* RecipeListViewController.xib */; };
 		2610DD7A137734C700E23057 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2610DD78137734C700E23057 /* MainWindow-iPad.xib */; };
@@ -67,6 +69,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2609ED731377640A008CA0EC /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
+		2609ED741377640A008CA0EC /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
+		2609ED751377640A008CA0EC /* StringEncryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StringEncryption.h; sourceTree = "<group>"; };
+		2609ED761377640A008CA0EC /* StringEncryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StringEncryption.m; sourceTree = "<group>"; };
 		2610DD711376348C00E23057 /* RecipeListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeListViewController.h; sourceTree = "<group>"; };
 		2610DD721376348C00E23057 /* RecipeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeListViewController.m; sourceTree = "<group>"; };
 		2610DD731376348C00E23057 /* RecipeListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeListViewController.xib; sourceTree = "<group>"; };
@@ -217,6 +223,10 @@
 		2654A1531352117100C397A0 /* LotroCalc */ = {
 			isa = PBXGroup;
 			children = (
+				2609ED731377640A008CA0EC /* NSData+Base64.h */,
+				2609ED741377640A008CA0EC /* NSData+Base64.m */,
+				2609ED751377640A008CA0EC /* StringEncryption.h */,
+				2609ED761377640A008CA0EC /* StringEncryption.m */,
 				2610DD77137734C500E23057 /* iPad */,
 				2654A1991352127C00C397A0 /* Soap */,
 				2654A1B71352127C00C397A0 /* TouchXML */,
@@ -483,6 +493,8 @@
 				2654A1D81352127C00C397A0 /* CXMLNode_XPathExtensions.m in Sources */,
 				2654A1E313527A8F00C397A0 /* TierViewController.m in Sources */,
 				2610DD741376348C00E23057 /* RecipeListViewController.m in Sources */,
+				2609ED771377640A008CA0EC /* NSData+Base64.m in Sources */,
+				2609ED781377640A008CA0EC /* StringEncryption.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
