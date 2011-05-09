@@ -8,7 +8,9 @@
 
 #import "RecipeListViewController.h"
 #import "LotroWSServices.h"
-
+#import "StringEncryption.h"
+#import "NSData+Base64.h"
+#import "StringEncryption.h"
 
 @implementation RecipeListViewController
 
@@ -125,15 +127,21 @@
     
 	// Do something with the NSMutableArray* result
     NSMutableArray* result = (NSMutableArray*)value;
-    /*
+    
+    NSMutableArray *newArray = [[NSMutableArray alloc] init];
+    
+    
 	NSLog(@"GetRecipeNames returned the value: %@", result);
     for (NSMutableString *ret in result) {
         NSLog(@"%@\n", ret);
         
+        NSString *dec = [StringEncryption DecryptString:ret];
+        NSLog(@"dec = %@\n", dec);
+        
+        [newArray addObject:dec];
     }
-     */
     
-    self.recipeNames = result;
+    self.recipeNames = newArray;
     [self.tableView reloadData];
     //self.tableView.hidden = false;
     
