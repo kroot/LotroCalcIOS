@@ -12,6 +12,13 @@
 		2610DD741376348C00E23057 /* RecipeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2610DD721376348C00E23057 /* RecipeListViewController.m */; };
 		2610DD751376348C00E23057 /* RecipeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2610DD731376348C00E23057 /* RecipeListViewController.xib */; };
 		2610DD7A137734C700E23057 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2610DD78137734C700E23057 /* MainWindow-iPad.xib */; };
+		262EA9071378ED420030F6D4 /* Anvil29.png in Resources */ = {isa = PBXBuildFile; fileRef = 262EA9021378ED420030F6D4 /* Anvil29.png */; };
+		262EA9081378ED420030F6D4 /* Anvil57.png in Resources */ = {isa = PBXBuildFile; fileRef = 262EA9031378ED420030F6D4 /* Anvil57.png */; };
+		262EA9091378ED420030F6D4 /* Anvil72.png in Resources */ = {isa = PBXBuildFile; fileRef = 262EA9041378ED420030F6D4 /* Anvil72.png */; };
+		262EA90A1378ED420030F6D4 /* Anvil114.png in Resources */ = {isa = PBXBuildFile; fileRef = 262EA9051378ED420030F6D4 /* Anvil114.png */; };
+		262EA90B1378ED420030F6D4 /* Anvil512.png in Resources */ = {isa = PBXBuildFile; fileRef = 262EA9061378ED420030F6D4 /* Anvil512.png */; };
+		262EA90E1378F0C50030F6D4 /* Anvil50.png in Resources */ = {isa = PBXBuildFile; fileRef = 262EA90C1378F0C50030F6D4 /* Anvil50.png */; };
+		262EA90F1378F0C50030F6D4 /* Anvil58.png in Resources */ = {isa = PBXBuildFile; fileRef = 262EA90D1378F0C50030F6D4 /* Anvil58.png */; };
 		2654A14E1352117100C397A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2654A14D1352117100C397A0 /* UIKit.framework */; };
 		2654A1501352117100C397A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2654A14F1352117100C397A0 /* Foundation.framework */; };
 		2654A1521352117100C397A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2654A1511352117100C397A0 /* CoreGraphics.framework */; };
@@ -77,6 +84,13 @@
 		2610DD721376348C00E23057 /* RecipeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeListViewController.m; sourceTree = "<group>"; };
 		2610DD731376348C00E23057 /* RecipeListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeListViewController.xib; sourceTree = "<group>"; };
 		2610DD79137734C700E23057 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "iPad/en.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		262EA9021378ED420030F6D4 /* Anvil29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Anvil29.png; sourceTree = "<group>"; };
+		262EA9031378ED420030F6D4 /* Anvil57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Anvil57.png; sourceTree = "<group>"; };
+		262EA9041378ED420030F6D4 /* Anvil72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Anvil72.png; sourceTree = "<group>"; };
+		262EA9051378ED420030F6D4 /* Anvil114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Anvil114.png; sourceTree = "<group>"; };
+		262EA9061378ED420030F6D4 /* Anvil512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Anvil512.png; sourceTree = "<group>"; };
+		262EA90C1378F0C50030F6D4 /* Anvil50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Anvil50.png; sourceTree = "<group>"; };
+		262EA90D1378F0C50030F6D4 /* Anvil58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Anvil58.png; sourceTree = "<group>"; };
 		2654A1491352117100C397A0 /* LOTRO Calc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "LOTRO Calc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2654A14D1352117100C397A0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2654A14F1352117100C397A0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -251,6 +265,13 @@
 		2654A1541352117100C397A0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				262EA90C1378F0C50030F6D4 /* Anvil50.png */,
+				262EA90D1378F0C50030F6D4 /* Anvil58.png */,
+				262EA9021378ED420030F6D4 /* Anvil29.png */,
+				262EA9031378ED420030F6D4 /* Anvil57.png */,
+				262EA9041378ED420030F6D4 /* Anvil72.png */,
+				262EA9051378ED420030F6D4 /* Anvil114.png */,
+				262EA9061378ED420030F6D4 /* Anvil512.png */,
 				2654A1551352117100C397A0 /* LOTRO Calc-Info.plist */,
 				2654A1561352117100C397A0 /* InfoPlist.strings */,
 				2654A1591352117100C397A0 /* LOTRO Calc-Prefix.pch */,
@@ -427,6 +448,13 @@
 				26EB4D2713528A9A00BEA2A9 /* TierViewController.xib in Resources */,
 				2610DD751376348C00E23057 /* RecipeListViewController.xib in Resources */,
 				2610DD7A137734C700E23057 /* MainWindow-iPad.xib in Resources */,
+				262EA9071378ED420030F6D4 /* Anvil29.png in Resources */,
+				262EA9081378ED420030F6D4 /* Anvil57.png in Resources */,
+				262EA9091378ED420030F6D4 /* Anvil72.png in Resources */,
+				262EA90A1378ED420030F6D4 /* Anvil114.png in Resources */,
+				262EA90B1378ED420030F6D4 /* Anvil512.png in Resources */,
+				262EA90E1378F0C50030F6D4 /* Anvil50.png in Resources */,
+				262EA90F1378F0C50030F6D4 /* Anvil58.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
