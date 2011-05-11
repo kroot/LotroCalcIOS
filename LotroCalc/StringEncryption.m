@@ -57,6 +57,7 @@ StringEncryption *crypto = [[[StringEncryption alloc] init] autorelease];
 
 - (void)testSymmetricEncryption
 {
+    /*
 	NSLog(@"testing symmetric encrypt/decrypt ...");
 	NSString *_key = @"hello";
 	NSString *_secret = @"hello";
@@ -79,6 +80,7 @@ StringEncryption *crypto = [[[StringEncryption alloc] init] autorelease];
 	NSString *str = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
 	NSLog(@"decrypted string: %@", str);
 	NSLog(@"test finished.");
+     */
 }
 
 - (NSData *)encrypt:(NSData *)plainText key:(NSData *)aSymmetricKey padding:(CCOptions *)pkcs7

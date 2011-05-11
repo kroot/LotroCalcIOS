@@ -7,19 +7,26 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IngredientsListViewController.h"
 
 
 @interface RecipeListViewController : UITableViewController {
-    @private NSArray *_recipeNames;
     @private NSString *profession;
     @private NSString *tier;
+    //@private NSString *recipeName;
+    
+    @private NSArray *_recipeNames;
+    
     IBOutlet UITableView *recipeView;
+    @private IngredientsListViewController *_ingController;
 }
 
 @property (nonatomic, retain) NSArray *recipeNames;
 @property (copy) NSString *profession;
 @property (copy) NSString *tier;
-//@property IBOutlet UITableView *recipeView;
+//@property (copy) NSString *recipeName;
+
 @property (nonatomic, retain) UIView *activityView;
+@property (nonatomic, retain) IBOutlet IngredientsListViewController *ingController;
 
 @end

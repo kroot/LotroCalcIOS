@@ -1,26 +1,24 @@
 //
-//  RecipeListViewController.m
-//  LotroCalc
+//  IngredientsListViewController.m
+//  LOTRO Calc
 //
-//  Created by kroot on 5/7/11.
+//  Created by kroot on 5/10/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "RecipeListViewController.h"
+#import "IngredientsListViewController.h"
 #import "LotroWSServices.h"
 #import "StringEncryption.h"
 #import "NSData+Base64.h"
 #import "StringEncryption.h"
 
-@implementation RecipeListViewController
-
-@synthesize recipeNames = _recipeNames;
+@implementation IngredientsListViewController
 
 @synthesize profession;
 @synthesize tier;
-//@synthesize recipeName;
+@synthesize recipeName;
 
-@synthesize ingController = _ingController;
+@synthesize ingNames;
 @synthesize activityView;
 
 
@@ -35,7 +33,6 @@
 
 - (void)dealloc
 {
-    [_recipeNames release];
     [super dealloc];
 }
 
@@ -58,7 +55,6 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    recipeView.hidden = true;
 }
 
 - (void)viewDidUnload
@@ -70,28 +66,14 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    //self.tableView..hidden = true;
-    recipeView.hidden = TRUE;
-
-    /* self.recipeNames = [[NSMutableArray alloc] initWithObjects:
-                  @"x", 
-                  @"y", 
-                  @"z",
-                  @"Artisan",
-                  @"Master",
-                  @"Supreme",
-                  nil
-                  ];
-     */
-    
     LotroWSLotroCalc* service = [LotroWSLotroCalc service];
     service.logging = YES;
-    [service GetRecipeNames:self action:@selector(GetRecipeNamesHandler:) 
-                 profession: self.profession 
-                       tier: self.tier];
+    [service GetRecipeIngredients:self  action:@selector(GetRecipeIngredientsHandler:) recipeName:recipeName quantity:1 ];
+
+    
     
     [super viewWillAppear:animated];
-    
+
     [self.tableView reloadData];
     
     self.title = @"Loading recipe names...";
@@ -110,12 +92,13 @@
     
     [self.tableView addSubview:activityView];
     [activityView release];
-}
 
-- (void) GetRecipeNamesHandler: (id) value {
-    //return;
-    
-	// Handle errors
+}
+     
+
+- (void) GetRecipeIngredientsHandler: (id) value {
+
+    // Handle errors
 	if([value isKindOfClass:[NSError class]]) {
 		NSLog(@"%@", value);
 		return;
@@ -127,15 +110,26 @@
 		return;
 	}				
     
+ 	//if([value isKindOfClass:[LotroWSWebIngredient class]]) {
+        NSMutableArray* result = (NSMutableArray*)value;
     
-	// Do something with the NSMutableArray* result
+        for (LotroWSWebIngredient *ing in result) {
+            NSLog(@"%@", ing.IngredientName);
+
+            NSString *dec = [StringEncryption DecryptString:ing.IngredientName];
+            NSLog(@"dec = %@\n", dec);
+
+        }	
+    //}	   
+    
+    /*
     NSMutableArray* result = (NSMutableArray*)value;
     
     NSMutableArray *newArray = [[NSMutableArray alloc] init];
     
     
-	NSLog(@"GetRecipeNames returned the value: %@", result);
-    for (NSMutableString *ret in result) {
+	NSLog(@"GetRecipeIngredients returned the value: %@", value);
+    for (NSMutableString *ret in value) {
         NSLog(@"%@\n", ret);
         
         NSString *dec = [StringEncryption DecryptString:ret];
@@ -143,14 +137,17 @@
         
         [newArray addObject:dec];
     }
+     */
     
-    self.recipeNames = newArray;
+    //self.ingNames = newArray;
     [self.tableView reloadData];
     //self.tableView.hidden = false;
     
     [activityView removeFromSuperview];
-    self.title = @"Recipe Names";
+    self.title = @"Ingredients";    
+
 }
+     
 
 - (void)viewDidAppear:(BOOL)animated
 {
@@ -177,12 +174,16 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+#warning Potentially incomplete method implementation.
+    // Return the number of sections.
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.recipeNames count];
+#warning Incomplete method implementation.
+    // Return the number of rows in the section.
+    return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -195,8 +196,7 @@
     }
     
     // Configure the cell...
-    cell.textLabel.text = [self.recipeNames objectAtIndex:[indexPath row]];
- 
+    
     return cell;
 }
 
@@ -251,20 +251,6 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
-    
-    _ingController = [[IngredientsListViewController alloc] init];
-    
-    NSUInteger row = [indexPath row];
-    NSString *newText = [self.recipeNames objectAtIndex:row];
-    _ingController.navigationItem.title = newText;
-    
-    _ingController.profession = self.profession;
-    _ingController.tier = self.tier;
-    _ingController.recipeName = newText;
-    
-    
-    // Pass the selected object to the new view controller.
-    [self.navigationController pushViewController:(UITableViewController *)self.ingController animated:YES];    
 }
 
 @end
