@@ -15,6 +15,7 @@
     @private NSString *recipeName;
     
     @private NSArray *ingNames;
+    @private NSArray *ingQtys;
     IBOutlet UITableView *ingredientView;    
 }
 
@@ -24,6 +25,7 @@
 @property (copy) NSString *recipeName;
 
 @property (nonatomic, retain) NSArray *ingNames;
+@property (nonatomic, retain) NSArray *ingQtys;
 
 @property (nonatomic, retain) UIView *activityView;
 

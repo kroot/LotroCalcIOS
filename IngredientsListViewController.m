@@ -19,6 +19,7 @@
 @synthesize recipeName;
 
 @synthesize ingNames;
+@synthesize ingQtys;
 @synthesize activityView;
 
 
@@ -112,7 +113,8 @@
     
  	//if([value isKindOfClass:[LotroWSWebIngredient class]]) {
     NSMutableArray* result = (NSMutableArray*)value;
-    NSMutableArray *newArray = [[NSMutableArray alloc] init];
+    NSMutableArray *newIngNameArray = [[NSMutableArray alloc] init];
+    NSMutableArray *newIngQtyArray = [[NSMutableArray alloc] init];
 
     for (LotroWSWebIngredient *ing in result) {
         NSLog(@"%@", ing.IngredientName);
@@ -120,9 +122,12 @@
         NSString *dec = [StringEncryption DecryptString:ing.IngredientName];
         NSLog(@"dec = %@\n", dec);
         
-        [newArray addObject:dec];       
+        [newIngNameArray addObject:dec];  
+        NSString *qty = [NSString stringWithFormat:@"%d", ing.Quantity];
+        [newIngQtyArray addObject:qty];       
     }	
-    self.ingNames = newArray;
+    self.ingNames = newIngNameArray;
+    self.ingQtys = newIngQtyArray;
 
     //}	   
     
@@ -190,15 +195,18 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"ingCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
     }
     
     // Configure the cell...
+    
     cell.textLabel.text = [self.ingNames objectAtIndex:[indexPath row]];
+    cell.detailTextLabel.text = [self.ingQtys objectAtIndex:[indexPath row]];
 
     return cell;
 }

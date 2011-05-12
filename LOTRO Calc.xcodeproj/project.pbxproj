@@ -62,6 +62,8 @@
 		2654A1D81352127C00C397A0 /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1C31352127C00C397A0 /* CXMLNode_XPathExtensions.m */; };
 		2654A1DA13521AA400C397A0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2654A1D913521AA400C397A0 /* SystemConfiguration.framework */; };
 		2654A1E313527A8F00C397A0 /* TierViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1E113527A8F00C397A0 /* TierViewController.m */; };
+		26A278CC137A174600A6160C /* IngredientsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26A278CA137A174600A6160C /* IngredientsListViewController.m */; };
+		26A278CD137A174600A6160C /* IngredientsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26A278CB137A174600A6160C /* IngredientsListViewController.xib */; };
 		26EB4D2713528A9A00BEA2A9 /* TierViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26EB4D2513528A9A00BEA2A9 /* TierViewController.xib */; };
 /* End PBXBuildFile section */
 
@@ -168,6 +170,9 @@
 		2654A1D913521AA400C397A0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2654A1E013527A8F00C397A0 /* TierViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TierViewController.h; sourceTree = "<group>"; };
 		2654A1E113527A8F00C397A0 /* TierViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TierViewController.m; sourceTree = "<group>"; };
+		26A278C9137A174600A6160C /* IngredientsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = IngredientsListViewController.h; path = ../IngredientsListViewController.h; sourceTree = "<group>"; };
+		26A278CA137A174600A6160C /* IngredientsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IngredientsListViewController.m; path = ../IngredientsListViewController.m; sourceTree = "<group>"; };
+		26A278CB137A174600A6160C /* IngredientsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = IngredientsListViewController.xib; path = ../IngredientsListViewController.xib; sourceTree = "<group>"; };
 		26EB4D2513528A9A00BEA2A9 /* TierViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TierViewController.xib; path = ../TierViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -258,6 +263,9 @@
 				2610DD711376348C00E23057 /* RecipeListViewController.h */,
 				2610DD721376348C00E23057 /* RecipeListViewController.m */,
 				2610DD731376348C00E23057 /* RecipeListViewController.xib */,
+				26A278C9137A174600A6160C /* IngredientsListViewController.h */,
+				26A278CA137A174600A6160C /* IngredientsListViewController.m */,
+				26A278CB137A174600A6160C /* IngredientsListViewController.xib */,
 			);
 			path = LotroCalc;
 			sourceTree = "<group>";
@@ -455,6 +463,7 @@
 				262EA90B1378ED420030F6D4 /* Anvil512.png in Resources */,
 				262EA90E1378F0C50030F6D4 /* Anvil50.png in Resources */,
 				262EA90F1378F0C50030F6D4 /* Anvil58.png in Resources */,
+				26A278CD137A174600A6160C /* IngredientsListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +532,7 @@
 				2610DD741376348C00E23057 /* RecipeListViewController.m in Sources */,
 				2609ED771377640A008CA0EC /* NSData+Base64.m in Sources */,
 				2609ED781377640A008CA0EC /* StringEncryption.m in Sources */,
+				26A278CC137A174600A6160C /* IngredientsListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
