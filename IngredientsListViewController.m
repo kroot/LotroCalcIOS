@@ -111,15 +111,19 @@
 	}				
     
  	//if([value isKindOfClass:[LotroWSWebIngredient class]]) {
-        NSMutableArray* result = (NSMutableArray*)value;
-    
-        for (LotroWSWebIngredient *ing in result) {
-            NSLog(@"%@", ing.IngredientName);
+    NSMutableArray* result = (NSMutableArray*)value;
+    NSMutableArray *newArray = [[NSMutableArray alloc] init];
 
-            NSString *dec = [StringEncryption DecryptString:ing.IngredientName];
-            NSLog(@"dec = %@\n", dec);
+    for (LotroWSWebIngredient *ing in result) {
+        NSLog(@"%@", ing.IngredientName);
 
-        }	
+        NSString *dec = [StringEncryption DecryptString:ing.IngredientName];
+        NSLog(@"dec = %@\n", dec);
+        
+        [newArray addObject:dec];       
+    }	
+    self.ingNames = newArray;
+
     //}	   
     
     /*
@@ -174,16 +178,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.ingNames count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -196,7 +198,8 @@
     }
     
     // Configure the cell...
-    
+    cell.textLabel.text = [self.ingNames objectAtIndex:[indexPath row]];
+
     return cell;
 }
 
