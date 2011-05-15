@@ -143,7 +143,7 @@
     self.recipeNames = newArray;
     [self.tableView reloadData];    
     
-    self.title = @"Recipe Names";
+    self.title = self.tier;
     [HUD hide:YES];
 }
 

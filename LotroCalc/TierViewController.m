@@ -70,7 +70,7 @@
     self.tiers = nil;
     
     // Do any additional setup after loading the view from its nib.
-    //self.title = self.profession;
+    self.title = self.profession;
 }
 
 - (void)viewDidUnload

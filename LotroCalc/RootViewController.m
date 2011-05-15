@@ -36,6 +36,7 @@
                         @"Woodworker", 
                         nil
                         ];
+    self.title = @"LOTRO Calc";
 }
 
 
