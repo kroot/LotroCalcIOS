@@ -116,6 +116,7 @@
 
     // Configure the cell.
     cell.textLabel.text = [self.Professions objectAtIndex:[indexPath row]];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
 
@@ -161,10 +162,10 @@
 */
 
 
-- (UITableViewCellAccessoryType) tableView:(UITableView *)tableView accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-    return UITableViewCellAccessoryDisclosureIndicator;
-}
+//- (UITableViewCellAccessoryType) tableView:(UITableView *)tableView accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath
+//{
+//    return UITableViewCellAccessoryDisclosureIndicator;
+//}
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

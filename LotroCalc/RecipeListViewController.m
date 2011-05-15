@@ -69,23 +69,9 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated
-{
-    //self.tableView..hidden = true;
-    recipeView.hidden = TRUE;
-
-    /* self.recipeNames = [[NSMutableArray alloc] initWithObjects:
-                  @"x", 
-                  @"y", 
-                  @"z",
-                  @"Artisan",
-                  @"Master",
-                  @"Supreme",
-                  nil
-                  ];
-     */
-    
+{    
     LotroWSLotroCalc* service = [LotroWSLotroCalc service];
-    service.logging = YES;
+    service.logging = NO;
     [service GetRecipeNames:self action:@selector(GetRecipeNamesHandler:) 
                  profession: self.profession 
                        tier: self.tier];
@@ -120,7 +106,7 @@
 
 	// Handle errors
 	if([value isKindOfClass:[NSError class]]) {
-		NSLog(@"%@", value);
+//		NSLog(@"%@", value);
         
         NSString *errMsg = [value localizedDescription];
         
@@ -134,7 +120,7 @@
     
 	// Handle faults
 	if([value isKindOfClass:[SoapFault class]]) {
-		NSLog(@"%@", value);
+//		NSLog(@"%@", value);
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Error" 
             message:value delegate:self cancelButtonTitle:@"OK"
@@ -159,12 +145,12 @@
         [alert release];               
     }
         
-	NSLog(@"GetRecipeNames returned the value: %@", result);
+//	NSLog(@"GetRecipeNames returned the value: %@", result);
     for (NSMutableString *ret in result) {
-        NSLog(@"%@\n", ret);
+//        NSLog(@"%@\n", ret);
         
         NSString *dec = [StringEncryption DecryptString:ret];
-        NSLog(@"dec = %@\n", dec);
+//        NSLog(@"dec = %@\n", dec);
         
         [newArray addObject:dec];
     }
@@ -218,7 +204,8 @@
     
     // Configure the cell...
     cell.textLabel.text = [self.recipeNames objectAtIndex:[indexPath row]];
- 
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
     return cell;
 }
 
@@ -261,10 +248,10 @@
 }
 */
 
-- (UITableViewCellAccessoryType) tableView:(UITableView *)tableView accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-    return UITableViewCellAccessoryDisclosureIndicator;
-}
+//- (UITableViewCellAccessoryType) tableView:(UITableView *)tableView accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath
+//{
+//    return UITableViewCellAccessoryDisclosureIndicator;
+//}
 
 #pragma mark - Table view delegate
 

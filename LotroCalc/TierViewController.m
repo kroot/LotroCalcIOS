@@ -106,14 +106,15 @@
     }
                              
     cell.textLabel.text = [self.tiers objectAtIndex:[indexPath row]];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;                             
 }
 
 
-- (UITableViewCellAccessoryType) tableView:(UITableView *)tableView accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath
-{
-    return UITableViewCellAccessoryDisclosureIndicator;
-}
+//- (UITableViewCellAccessoryType) tableView:(UITableView *)tableView accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath
+//{
+//    return UITableViewCellAccessoryDisclosureIndicator;
+//}
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

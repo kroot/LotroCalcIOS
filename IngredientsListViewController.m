@@ -68,7 +68,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     LotroWSLotroCalc* service = [LotroWSLotroCalc service];
-    service.logging = YES;
+    service.logging = NO;
     [service GetRecipeIngredients:self  action:@selector(GetRecipeIngredientsHandler:) recipeName:recipeName quantity:1 ];
 
     
