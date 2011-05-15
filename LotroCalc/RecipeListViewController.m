@@ -94,7 +94,7 @@
     
     [self.tableView reloadData];
     
-    self.title = @"Loading recipe names...";
+    self.title = @"Loading...";
     
     activityView = [[UIView alloc] init];
     activityView.frame = self.tableView.frame;
@@ -107,33 +107,58 @@
     
     [ac startAnimating];
     [ac release];
-    
-    [self.tableView addSubview:activityView];
+
+    [self.tableView addSubview:activityView];    
+    [activityView bringSubviewToFront:self.tableView];    
     [activityView release];
 }
 
 - (void) GetRecipeNamesHandler: (id) value {
-    //return;
     
+    [activityView removeFromSuperview];
+    self.title = @"Recipe Names";
+
 	// Handle errors
 	if([value isKindOfClass:[NSError class]]) {
 		NSLog(@"%@", value);
+        
+        NSString *errMsg = [value localizedDescription];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Error" 
+            message:errMsg delegate:self cancelButtonTitle:@"OK"
+            otherButtonTitles: nil];
+        [alert show];	
+        [alert release];
 		return;
 	}
     
 	// Handle faults
 	if([value isKindOfClass:[SoapFault class]]) {
 		NSLog(@"%@", value);
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Error" 
+            message:value delegate:self cancelButtonTitle:@"OK"
+            otherButtonTitles: nil];
+        [alert show];	
+        [alert release];       
+        
 		return;
-	}				
-    
+	}				    
     
 	// Do something with the NSMutableArray* result
     NSMutableArray* result = (NSMutableArray*)value;
     
     NSMutableArray *newArray = [[NSMutableArray alloc] init];
     
-    
+    if ([result count] == 0)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Error" 
+            message:@"Unable to read recipe data" delegate:self cancelButtonTitle:@"OK"
+            otherButtonTitles: nil];
+        [alert show];	
+        [alert release];               
+    }
+        
 	NSLog(@"GetRecipeNames returned the value: %@", result);
     for (NSMutableString *ret in result) {
         NSLog(@"%@\n", ret);
@@ -147,9 +172,6 @@
     self.recipeNames = newArray;
     [self.tableView reloadData];
     //self.tableView.hidden = false;
-    
-    [activityView removeFromSuperview];
-    self.title = @"Recipe Names";
 }
 
 - (void)viewDidAppear:(BOOL)animated

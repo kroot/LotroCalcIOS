@@ -77,7 +77,7 @@
 
     [self.tableView reloadData];
     
-    self.title = @"Loading recipe names...";
+    self.title = @"Loading...";
     
     activityView = [[UIView alloc] init];
     activityView.frame = self.tableView.frame;
@@ -92,6 +92,7 @@
     [ac release];
     
     [self.tableView addSubview:activityView];
+    [activityView bringSubviewToFront:self.tableView];
     [activityView release];
 
 }
@@ -102,12 +103,30 @@
     // Handle errors
 	if([value isKindOfClass:[NSError class]]) {
 		NSLog(@"%@", value);
+        
+        NSString *errMsg = [value localizedDescription];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Error" 
+            message:errMsg delegate:self cancelButtonTitle:@"OK"
+            otherButtonTitles: nil];
+        [alert show];	
+        [alert release];
+        
 		return;
 	}
     
 	// Handle faults
 	if([value isKindOfClass:[SoapFault class]]) {
 		NSLog(@"%@", value);
+        
+ 		NSLog(@"%@", value);
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Error" 
+            message:value delegate:self cancelButtonTitle:@"OK"
+            otherButtonTitles: nil];
+        [alert show];	
+        [alert release];       
+       
 		return;
 	}				
     
@@ -115,6 +134,15 @@
     NSMutableArray* result = (NSMutableArray*)value;
     NSMutableArray *newIngNameArray = [[NSMutableArray alloc] init];
     NSMutableArray *newIngQtyArray = [[NSMutableArray alloc] init];
+    
+    if ([result count] == 0)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Error" 
+            message:@"Unable to read recipe data" delegate:self cancelButtonTitle:@"OK"
+            otherButtonTitles: nil];
+        [alert show];	
+        [alert release];               
+    }
 
     for (LotroWSWebIngredient *ing in result) {
         NSLog(@"%@", ing.IngredientName);

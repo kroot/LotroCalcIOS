@@ -29,7 +29,7 @@ exit(-1);			\
 
 @implementation StringEncryption
 
-NSString *_key = @"1234567891123456";
+NSString *_key = @"tLd!B%;TC6mx#YuV";
 CCOptions padding = kCCOptionPKCS7Padding;
 
 + (NSString *) EncryptString:(NSString *)plainSourceStringToEncrypt
