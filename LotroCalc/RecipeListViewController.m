@@ -1,4 +1,4 @@
-//
+            //
 //  RecipeListViewController.m
 //  LotroCalc
 //
@@ -11,6 +11,7 @@
 #import "StringEncryption.h"
 #import "NSData+Base64.h"
 #import "StringEncryption.h"
+#import "MBProgressHUD.h"
 
 @implementation RecipeListViewController
 
@@ -21,7 +22,6 @@
 //@synthesize recipeName;
 
 @synthesize ingController = _ingController;
-@synthesize activityView;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -70,6 +70,16 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {    
+    
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+	
+    HUD.delegate = self;
+    HUD.labelText = @"Loading";
+    HUD.detailsLabelText = @"from CraftingCalc.com";
+	
+     [HUD show:YES];
+    
     LotroWSLotroCalc* service = [LotroWSLotroCalc service];
     service.logging = NO;
     [service GetRecipeNames:self action:@selector(GetRecipeNamesHandler:) 
@@ -81,28 +91,12 @@
     [self.tableView reloadData];
     
     self.title = @"Loading...";
-    
-    activityView = [[UIView alloc] init];
-    activityView.frame = self.tableView.frame;
-    // save this view somewhere
-    
-    UIActivityIndicatorView *ac = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    CGRect frame = activityView.frame;
-    ac.center = CGPointMake(frame.size.width/2, frame.size.height/2);
-    [activityView addSubview:ac];    
-    
-    [ac startAnimating];
-    [ac release];
-
-    [self.tableView addSubview:activityView];    
-    [activityView bringSubviewToFront:self.tableView];    
-    [activityView release];
 }
 
 - (void) GetRecipeNamesHandler: (id) value {
     
-    [activityView removeFromSuperview];
     self.title = @"Recipe Names";
+    [HUD hide:YES];
 
 	// Handle errors
 	if([value isKindOfClass:[NSError class]]) {
@@ -280,5 +274,17 @@
     // Pass the selected object to the new view controller.
     [self.navigationController pushViewController:(UITableViewController *)self.ingController animated:YES];    
 }
+
+
+#pragma mark -
+#pragma mark MBProgressHUDDelegate methods
+
+- (void)hudWasHidden {
+    // Remove HUD from screen when the HUD was hidded
+    [HUD removeFromSuperview];
+    [HUD release];
+	HUD = nil;
+}
+
 
 @end
