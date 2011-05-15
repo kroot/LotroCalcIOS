@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBProgressHUD.h"
 
 
-@interface IngredientsListViewController : UITableViewController {
+@interface IngredientsListViewController : UITableViewController <MBProgressHUDDelegate> {
     @private NSString *profession;
     @private NSString *tier;
     @private NSString *recipeName;
@@ -17,6 +18,8 @@
     @private NSArray *ingNames;
     @private NSArray *ingQtys;
     IBOutlet UITableView *ingredientView;    
+
+    MBProgressHUD *HUD;
 }
 
 

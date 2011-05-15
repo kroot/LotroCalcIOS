@@ -11,6 +11,7 @@
 #import "StringEncryption.h"
 #import "NSData+Base64.h"
 #import "StringEncryption.h"
+#import "MBProgressHUD.h"
 
 @implementation IngredientsListViewController
 
@@ -67,11 +68,19 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    
+    HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
+    [self.navigationController.view addSubview:HUD];
+	
+    HUD.delegate = self;
+    HUD.labelText = @"Loading";
+    HUD.detailsLabelText = @"from CraftingCalc.com";
+	
+    [HUD show:YES];
+
     LotroWSLotroCalc* service = [LotroWSLotroCalc service];
     service.logging = NO;
-    [service GetRecipeIngredients:self  action:@selector(GetRecipeIngredientsHandler:) recipeName:recipeName quantity:1 ];
-
-    
+    [service GetRecipeIngredients:self  action:@selector(GetRecipeIngredientsHandler:) recipeName:recipeName quantity:1 ];    
     
     [super viewWillAppear:animated];
 
@@ -157,31 +166,11 @@
     self.ingNames = newIngNameArray;
     self.ingQtys = newIngQtyArray;
 
-    //}	   
-    
-    /*
-    NSMutableArray* result = (NSMutableArray*)value;
-    
-    NSMutableArray *newArray = [[NSMutableArray alloc] init];
-    
-    
-	NSLog(@"GetRecipeIngredients returned the value: %@", value);
-    for (NSMutableString *ret in value) {
-        NSLog(@"%@\n", ret);
-        
-        NSString *dec = [StringEncryption DecryptString:ret];
-        NSLog(@"dec = %@\n", dec);
-        
-        [newArray addObject:dec];
-    }
-     */
-    
-    //self.ingNames = newArray;
     [self.tableView reloadData];
-    //self.tableView.hidden = false;
     
     [activityView removeFromSuperview];
     self.title = self.recipeName;    
+    [HUD hide:YES];
 }
      
 
@@ -290,5 +279,15 @@
      [detailViewController release];
 }
 */
+
+#pragma mark -
+#pragma mark MBProgressHUDDelegate methods
+
+- (void)hudWasHidden {
+    // Remove HUD from screen when the HUD was hidded
+    [HUD removeFromSuperview];
+    [HUD release];
+	HUD = nil;
+}
 
 @end

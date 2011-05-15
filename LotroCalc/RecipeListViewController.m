@@ -19,7 +19,6 @@
 
 @synthesize profession;
 @synthesize tier;
-//@synthesize recipeName;
 
 @synthesize ingController = _ingController;
 
@@ -78,7 +77,7 @@
     HUD.labelText = @"Loading";
     HUD.detailsLabelText = @"from CraftingCalc.com";
 	
-     [HUD show:YES];
+    [HUD show:YES];
     
     LotroWSLotroCalc* service = [LotroWSLotroCalc service];
     service.logging = NO;
@@ -94,13 +93,9 @@
 }
 
 - (void) GetRecipeNamesHandler: (id) value {
-    
-    self.title = @"Recipe Names";
-    [HUD hide:YES];
 
 	// Handle errors
 	if([value isKindOfClass:[NSError class]]) {
-//		NSLog(@"%@", value);
         
         NSString *errMsg = [value localizedDescription];
         
@@ -114,7 +109,6 @@
     
 	// Handle faults
 	if([value isKindOfClass:[SoapFault class]]) {
-//		NSLog(@"%@", value);
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Error" 
             message:value delegate:self cancelButtonTitle:@"OK"
@@ -139,19 +133,18 @@
         [alert release];               
     }
         
-//	NSLog(@"GetRecipeNames returned the value: %@", result);
     for (NSMutableString *ret in result) {
-//        NSLog(@"%@\n", ret);
         
         NSString *dec = [StringEncryption DecryptString:ret];
-//        NSLog(@"dec = %@\n", dec);
         
         [newArray addObject:dec];
     }
     
     self.recipeNames = newArray;
-    [self.tableView reloadData];
-    //self.tableView.hidden = false;
+    [self.tableView reloadData];    
+    
+    self.title = @"Recipe Names";
+    [HUD hide:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated
