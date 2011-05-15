@@ -16,13 +16,11 @@ NSAssert1(X, Y, Z);
 #else
 #define LOGGING_FACILITY(X, Y)	\
 if(!(X)) {			\
-NSLog(Y);		\
 exit(-1);		\
 }					
 
 #define LOGGING_FACILITY1(X, Y, Z)	\
 if(!(X)) {				\
-NSLog(Y, Z);		\
 exit(-1);			\
 }						
 #endif
@@ -120,8 +118,8 @@ StringEncryption *crypto = [[[StringEncryption alloc] init] autorelease];
     uint8_t iv[kChosenCipherBlockSize];
     memset((void *) iv, 0x0, (size_t) sizeof(iv));
 	
-    NSLog(@"doCipher: plaintext: %@", plainText);
-    NSLog(@"doCipher: key length: %d", [aSymmetricKey length]);
+    //NSLog(@"doCipher: plaintext: %@", plainText);
+//    NSLog(@"doCipher: key length: %d", [aSymmetricKey length]);
 	
     //LOGGING_FACILITY(plainText != nil, @"PlainText object cannot be nil." );
     //LOGGING_FACILITY(aSymmetricKey != nil, @"Symmetric key object cannot be nil." );
@@ -132,7 +130,7 @@ StringEncryption *crypto = [[[StringEncryption alloc] init] autorelease];
 	
     //LOGGING_FACILITY(plainTextBufferSize > 0, @"Empty plaintext passed in." );
 	
-    NSLog(@"pkcs7: %d", *pkcs7);
+//    NSLog(@"pkcs7: %d", *pkcs7);
     // We don't want to toss padding on if we don't need to
     if(encryptOrDecrypt == kCCEncrypt) {
         if(*pkcs7 != kCCOptionECBMode) {
