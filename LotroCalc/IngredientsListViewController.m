@@ -111,7 +111,7 @@
 
     // Handle errors
 	if([value isKindOfClass:[NSError class]]) {
-		NSLog(@"%@", value);
+		//NSLog(@"%@", value);
         
         NSString *errMsg = [value localizedDescription];
         
@@ -126,9 +126,9 @@
     
 	// Handle faults
 	if([value isKindOfClass:[SoapFault class]]) {
-		NSLog(@"%@", value);
+		//NSLog(@"%@", value);
         
- 		NSLog(@"%@", value);
+ 		//NSLog(@"%@", value);
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Error" 
             message:value delegate:self cancelButtonTitle:@"OK"
@@ -154,10 +154,10 @@
     }
 
     for (LotroWSWebIngredient *ing in result) {
-        NSLog(@"%@", ing.IngredientName);
+        //NSLog(@"%@", ing.IngredientName);
 
         NSString *dec = [StringEncryption DecryptString:ing.IngredientName];
-        NSLog(@"dec = %@\n", dec);
+        //NSLog(@"dec = %@\n", dec);
         
         [newIngNameArray addObject:dec];  
         NSString *qty = [@"Quantity: " stringByAppendingFormat:@"%d", ing.Quantity];
