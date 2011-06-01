@@ -30,6 +30,6 @@
 @property (nonatomic, retain) NSArray *ingNames;
 @property (nonatomic, retain) NSArray *ingQtys;
 
-@property (nonatomic, retain) UIView *activityView;
+//@property (nonatomic, retain) UIView *activityView;
 
 @end
