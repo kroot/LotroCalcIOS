@@ -21,7 +21,6 @@
 
 @synthesize ingNames;
 @synthesize ingQtys;
-@synthesize activityView;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -83,27 +82,8 @@
     [service GetRecipeIngredients:self  action:@selector(GetRecipeIngredientsHandler:) recipeName:recipeName quantity:1 ];    
     
     [super viewWillAppear:animated];
-
-    [self.tableView reloadData];
     
     self.title = @"Loading...";
-    
-    activityView = [[UIView alloc] init];
-    activityView.frame = self.tableView.frame;
-    // save this view somewhere
-    
-    UIActivityIndicatorView *ac = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    CGRect frame = activityView.frame;
-    ac.center = CGPointMake(frame.size.width/2, frame.size.height/2);
-    [activityView addSubview:ac];    
-    
-    [ac startAnimating];
-    [ac release];
-    
-    [self.tableView addSubview:activityView];
-    [activityView bringSubviewToFront:self.tableView];
-    [activityView release];
-
 }
      
 
@@ -168,7 +148,7 @@
 
     [self.tableView reloadData];
     
-    [activityView removeFromSuperview];
+    //[activityView removeFromSuperview];
     self.title = self.recipeName;    
     [HUD hide:YES];
 }
