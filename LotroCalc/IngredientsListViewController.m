@@ -56,6 +56,11 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    UIBarButtonItem * newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Ingredients" style:UIBarButtonItemStyleBordered target:self action:nil];
+    self.navigationItem.backBarButtonItem = newBackButton;
+    [newBackButton release];
+    
 }
 
 - (void)viewDidUnload
