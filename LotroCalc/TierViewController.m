@@ -71,6 +71,10 @@
     
     // Do any additional setup after loading the view from its nib.
     self.title = self.profession;
+    
+    UIBarButtonItem * newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Tiers" style:UIBarButtonItemStyleBordered target:self action:nil];
+    self.navigationItem.backBarButtonItem = newBackButton;
+    [newBackButton release];
 }
 
 - (void)viewDidUnload

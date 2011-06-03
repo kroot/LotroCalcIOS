@@ -37,6 +37,11 @@
                         nil
                         ];
     self.title = @"LOTRO Calc";
+    
+    
+    UIBarButtonItem * newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Professions" style:UIBarButtonItemStyleBordered target:self action:nil];
+    self.navigationItem.backBarButtonItem = newBackButton;
+    [newBackButton release];
 }
 
 
