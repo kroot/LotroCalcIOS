@@ -94,6 +94,9 @@
 
 - (void) GetRecipeIngredientsHandler: (id) value {
 
+    self.title = self.recipeName;    
+    [HUD hide:YES];
+
     // Handle errors
 	if([value isKindOfClass:[NSError class]]) {
 		//NSLog(@"%@", value);
@@ -110,7 +113,7 @@
 	}
     
 	// Handle faults
-	if([value isKindOfClass:[SoapFault class]]) {
+	else if([value isKindOfClass:[SoapFault class]]) {
 		//NSLog(@"%@", value);
         
  		//NSLog(@"%@", value);
@@ -154,8 +157,6 @@
     [self.tableView reloadData];
     
     //[activityView removeFromSuperview];
-    self.title = self.recipeName;    
-    [HUD hide:YES];
 }
      
 

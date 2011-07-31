@@ -98,6 +98,9 @@
 
 - (void) GetRecipeNamesHandler: (id) value {
 
+    [HUD hide:YES];
+    self.title = self.tier;
+    
 	// Handle errors
 	if([value isKindOfClass:[NSError class]]) {
         
@@ -112,7 +115,7 @@
 	}
     
 	// Handle faults
-	if([value isKindOfClass:[SoapFault class]]) {
+	else if([value isKindOfClass:[SoapFault class]]) {
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Error" 
             message:value delegate:self cancelButtonTitle:@"OK"
@@ -146,9 +149,6 @@
     
     self.recipeNames = newArray;
     [self.tableView reloadData];    
-    
-    self.title = self.tier;
-    [HUD hide:YES];
 }
 
 - (void)viewDidAppear:(BOOL)animated
