@@ -435,23 +435,32 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
-    
-    _ingController = [[ComponentIngredientListView alloc] init];
 
     NSUInteger secNum = [indexPath section];
-    //NSUInteger row = [indexPath row];
-    NSString *newText = [self.ingNames objectAtIndex:secNum];
-    _ingController.navigationItem.title = newText;
     
-    _ingController.profession = self.profession;
-    _ingController.tier = self.tier;
-    _ingController.recipeName = self.recipeName;
-    _ingController.compIngName = newText;
-    
-    
-    // Pass the selected object to the new view controller.
-    [self.navigationController pushViewController:(UITableViewController *)self.ingController animated:YES];    
+    if (secNum < [self.ingNames count])
+    {    
+        NSString *newText = [self.ingNames objectAtIndex:secNum];
+        
+        _ingController = [[ComponentIngredientListView alloc] init];
 
+        //NSUInteger row = [indexPath row];
+
+        _ingController.navigationItem.title = newText;
+        
+        _ingController.profession = self.profession;
+        _ingController.tier = self.tier;
+        _ingController.recipeName = self.recipeName;
+        _ingController.compIngName = newText;
+        
+        
+        // Pass the selected object to the new view controller.
+        [self.navigationController pushViewController:(UITableViewController *)self.ingController animated:YES];    
+    }
+    else
+    {
+        
+    }
 }
 
 
