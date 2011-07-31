@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "MBProgressHUD.h"
 #import "ComponentIngredientListView.h"
+#import "RecursiveIngredientsListView.h"
 
 
 @interface IngredientsListViewController : UITableViewController <MBProgressHUDDelegate> {
