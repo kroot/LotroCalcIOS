@@ -30,6 +30,7 @@
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
+    style = UITableViewStyleGrouped;
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
@@ -264,7 +265,7 @@
         return @"";
 
     if(section == [self.ingNames count])
-        return @"Mats Breakdown";
+        return @"Materials Breakdown";
     
     return [self.ingNames objectAtIndex:section];
 
@@ -311,8 +312,8 @@
         {
             if(0 == rowNum)
             {
-                cell.textLabel.text = [self.ingTypes objectAtIndex: secNum];
-                
+                cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+                cell.textLabel.text = [self.ingTypes objectAtIndex: secNum];                
             }
             else if (1 == rowNum)
             {
@@ -352,7 +353,8 @@
     }
     else
     {
-        cell.textLabel.text = @"Show required mats";        
+        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+        cell.textLabel.text = @"Show all required mats";        
     }
     
 //    if(indexPath.section == 0)
