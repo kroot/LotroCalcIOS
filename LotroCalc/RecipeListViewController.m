@@ -84,9 +84,11 @@
     [HUD show:YES];
     
     LotroWSLotroCalc* service = [LotroWSLotroCalc service];
+    NSString *encProf = [StringEncryption EncryptString: self.profession];
+
     service.logging = NO;
     [service GetRecipeNames:self action:@selector(GetRecipeNamesHandler:) 
-                 profession: self.profession 
+                 profession: encProf 
                        tier: self.tier];
     
     [super viewWillAppear:animated];
@@ -195,7 +197,7 @@
     
     // Configure the cell...
     cell.textLabel.text = [self.recipeNames objectAtIndex:[indexPath row]];
-    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     return cell;
 }

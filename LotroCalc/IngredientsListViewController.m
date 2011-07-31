@@ -89,8 +89,9 @@
     [HUD show:YES];
 
     LotroWSLotroCalc* service = [LotroWSLotroCalc service];
+    NSString *encRecipeName = [StringEncryption EncryptString: self.recipeName];
     service.logging = NO;
-    [service GetRecipeIngredients:self  action:@selector(GetRecipeIngredientsHandler:) recipeName:recipeName quantity:1 ];    
+    [service GetRecipeIngredients:self  action:@selector(GetRecipeIngredientsHandler:) recipeName:encRecipeName quantity:1 ];    
     
     [super viewWillAppear:animated];
     
@@ -245,10 +246,16 @@
         return 1;
     
     NSString *isCrafted = [self.ingsCrafted objectAtIndex:section];
-    if(@"True" == isCrafted)
+    if([isCrafted isEqualToString: @"True"])
         return 4;
     else
+    {
+        NSString *cost = [self.ingsSupplierCost objectAtIndex:section];
+        if ([cost isEqualToString: @"Cost: 0"])
+            return 2;
+
         return 3;
+    }
     
 //    if (section == 0)
 //    // Return the number of rows in the section.
@@ -308,27 +315,28 @@
         NSString *isCrafted = [self.ingsCrafted objectAtIndex:secNum];
         int rowNum = indexPath.row;
         
-        if(@"True" == isCrafted)
+        if([isCrafted isEqualToString: @"True"])
         {
             if(0 == rowNum)
             {
-                cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 cell.textLabel.text = [self.ingTypes objectAtIndex: secNum];                
             }
             else if (1 == rowNum)
             {
                 cell.textLabel.text = [self.ingQtys objectAtIndex:secNum];
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
  
             }
             else if (2 == rowNum)
             {
                 cell.textLabel.text = [self.ingTiers objectAtIndex:secNum];
-           
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;           
             }
             else if (3 == rowNum)
             {
                 cell.textLabel.text = [self.ingsXp objectAtIndex:secNum];
-       
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
 
         }
@@ -337,23 +345,23 @@
             if(0 == rowNum)
             {
                 cell.textLabel.text = [self.ingTypes objectAtIndex:secNum];
-                
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
             else if (1 == rowNum)
             {
                 cell.textLabel.text = [self.ingQtys objectAtIndex:secNum];
-                
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
             else if (2 == rowNum)
             {
                 cell.textLabel.text = [self.ingsSupplierCost objectAtIndex:secNum];
-                
+                cell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
         }
     }
     else
     {
-        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.textLabel.text = @"Show all required mats";        
     }
     

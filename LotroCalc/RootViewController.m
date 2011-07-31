@@ -122,7 +122,7 @@
 
     // Configure the cell.
     cell.textLabel.text = [self.Professions objectAtIndex:[indexPath row]];
-    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
 
