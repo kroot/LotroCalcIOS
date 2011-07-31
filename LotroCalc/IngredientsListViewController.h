@@ -29,6 +29,11 @@
 
 @property (nonatomic, retain) NSArray *ingNames;
 @property (nonatomic, retain) NSArray *ingQtys;
+@property (nonatomic, retain) NSArray *ingTypes;
+@property (nonatomic, retain) NSArray *ingsCrafted;
+@property (nonatomic, retain) NSArray *ingTiers;
+@property (nonatomic, retain) NSArray *ingsXp;
+@property (nonatomic, retain) NSArray *ingsSupplierCost;
 
 //@property (nonatomic, retain) UIView *activityView;
 

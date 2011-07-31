@@ -21,6 +21,11 @@
 
 @synthesize ingNames;
 @synthesize ingQtys;
+@synthesize ingTypes;
+@synthesize ingsCrafted;
+@synthesize ingTiers;
+@synthesize ingsXp;
+@synthesize ingsSupplierCost;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -131,6 +136,11 @@
     NSMutableArray* result = (NSMutableArray*)value;
     NSMutableArray *newIngNameArray = [[NSMutableArray alloc] init];
     NSMutableArray *newIngQtyArray = [[NSMutableArray alloc] init];
+    NSMutableArray *newIngTypeArray = [[NSMutableArray alloc] init];
+    NSMutableArray *newIngCraftedArray = [[NSMutableArray alloc] init];
+    NSMutableArray *newIngTierArray = [[NSMutableArray alloc] init];
+    NSMutableArray *newIngXpArray = [[NSMutableArray alloc] init];
+    NSMutableArray *newIngSupplierCostArray = [[NSMutableArray alloc] init];
     
     if ([result count] == 0)
     {
@@ -144,15 +154,46 @@
     for (LotroWSWebIngredient *ing in result) {
         //NSLog(@"%@", ing.IngredientName);
 
-        NSString *dec = [StringEncryption DecryptString:ing.IngredientName];
+        NSString *decName = [StringEncryption DecryptString:ing.IngredientName];
         //NSLog(@"dec = %@\n", dec);
+        [newIngNameArray addObject:decName];  
         
-        [newIngNameArray addObject:dec];  
         NSString *qty = [@"Quantity: " stringByAppendingFormat:@"%d", ing.Quantity];
         [newIngQtyArray addObject:qty];       
+        
+        NSString *decType = [@"Ingredient Type: " stringByAppendingFormat:@"%@", [StringEncryption DecryptString:ing.IngredientType]];
+        //NSLog(@"dec = %@\n", dec);
+        [newIngTypeArray addObject:decType];  
+        
+        if (ing.IsCrafted)
+            [newIngCraftedArray addObject:@"True"];  
+        else
+            [newIngCraftedArray addObject:@"False"];        
+        
+        if([ing Tier] != nil)
+        {
+            NSString *decTier = [@"Tier: " stringByAppendingFormat:@"%@", [StringEncryption DecryptString:ing.Tier]];
+            [newIngTierArray addObject:decTier];
+        }
+        else
+            [newIngTierArray addObject:@""];            
+        
+        NSString *xp = [@"Crafting XP: " stringByAppendingFormat:@"%d", ing.Xp];
+        [newIngXpArray addObject:xp];
+        
+        
+        NSString *cost = [@"Cost: " stringByAppendingFormat:@"%d", ing.SupplierCost];
+        [newIngSupplierCostArray addObject:cost];       
+        
     }	
     self.ingNames = newIngNameArray;
     self.ingQtys = newIngQtyArray;
+    self.ingTypes = newIngTypeArray;
+    self.ingTiers = newIngTierArray;
+    self.ingsCrafted = newIngCraftedArray;
+    self.ingsXp = newIngXpArray;
+    self.ingsSupplierCost = newIngSupplierCostArray;
+    
 
     [self.tableView reloadData];
     
@@ -185,15 +226,54 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
+    if (0 == [self.ingNames count])
+        return 0;
+    
     // Return the number of sections.
-    return 1;
+    //return 2;
+    return [self.ingNames count] + 1;
 }
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return [self.ingNames count];
+    if (0 == [self.ingNames count])
+        return 0;
+    
+    if(section == [self.ingNames count])
+        return 1;
+    
+    NSString *isCrafted = [self.ingsCrafted objectAtIndex:section];
+    if(@"True" == isCrafted)
+        return 4;
+    else
+        return 3;
+    
+//    if (section == 0)
+//    // Return the number of rows in the section.
+//        return [self.ingNames count];
+//    else
+//        return 1;
 }
+
+
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (0 == [self.ingNames count])
+        return @"";
+
+    if(section == [self.ingNames count])
+        return @"Mats Breakdown";
+    
+    return [self.ingNames objectAtIndex:section];
+
+//    if(section == 0)
+//        return @"Required Ingredients";
+//    else
+//        return @"all";
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -206,9 +286,88 @@
     }
     
     // Configure the cell...
+    if (indexPath == nil)
+        return cell;    
     
-    cell.textLabel.text = [self.ingNames objectAtIndex:[indexPath row]];
-    cell.detailTextLabel.text = [self.ingQtys objectAtIndex:[indexPath row]];
+    NSUInteger secNum = [indexPath section];
+    
+    //if ([indexPath section] == nil)
+      //  return cell;
+    
+    //NSLog(@"section = %@\n", sec);
+   
+
+    
+    //if (sec == nil)
+      //  return cell;
+
+ 
+    if (secNum < [self.ingNames count])
+    {
+        NSString *isCrafted = [self.ingsCrafted objectAtIndex:secNum];
+        int rowNum = indexPath.row;
+        
+        if(@"True" == isCrafted)
+        {
+            if(0 == rowNum)
+            {
+                cell.textLabel.text = [self.ingTypes objectAtIndex: secNum];
+                
+            }
+            else if (1 == rowNum)
+            {
+                cell.textLabel.text = [self.ingQtys objectAtIndex:secNum];
+ 
+            }
+            else if (2 == rowNum)
+            {
+                cell.textLabel.text = [self.ingTiers objectAtIndex:secNum];
+           
+            }
+            else if (3 == rowNum)
+            {
+                cell.textLabel.text = [self.ingsXp objectAtIndex:secNum];
+       
+            }
+
+        }
+        else
+        {
+            if(0 == rowNum)
+            {
+                cell.textLabel.text = [self.ingTypes objectAtIndex:secNum];
+                
+            }
+            else if (1 == rowNum)
+            {
+                cell.textLabel.text = [self.ingQtys objectAtIndex:secNum];
+                
+            }
+            else if (2 == rowNum)
+            {
+                cell.textLabel.text = [self.ingsSupplierCost objectAtIndex:secNum];
+                
+            }
+        }
+    }
+    else
+    {
+        cell.textLabel.text = @"Show required mats";        
+    }
+    
+//    if(indexPath.section == 0)
+//    {
+//        
+//        cell.textLabel.text = [self.ingNames objectAtIndex:[indexPath row]];
+//        cell.detailTextLabel.text = [self.ingQtys objectAtIndex:[indexPath row]];                
+//    }
+//    else
+//    {
+//        cell.textLabel.text = @"Show required mats";
+//    }
+    
+    //cell.textLabel.text = [self.ingNames objectAtIndex:[indexPath row]];
+    //cell.detailTextLabel.text = [self.ingQtys objectAtIndex:[indexPath row]];
 
     return cell;
 }
