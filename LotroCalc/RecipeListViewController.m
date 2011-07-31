@@ -195,7 +195,7 @@
     
     // Configure the cell...
     cell.textLabel.text = [self.recipeNames objectAtIndex:[indexPath row]];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     
     return cell;
 }

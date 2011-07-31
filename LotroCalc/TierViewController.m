@@ -110,7 +110,7 @@
     }
                              
     cell.textLabel.text = [self.tiers objectAtIndex:[indexPath row]];
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
     return cell;                             
 }
 
