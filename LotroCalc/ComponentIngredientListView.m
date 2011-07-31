@@ -1,23 +1,24 @@
 //
-//  IngredientsListViewController.m
+//  ComponentIngredientListView.m
 //  LOTRO Calc
 //
-//  Created by kroot on 5/10/11.
+//  Created by kroot on 7/31/11.
 //  Copyright 2011 __MyCompanyName__. All rights reserved.
 //
 
-#import "IngredientsListViewController.h"
+#import "ComponentIngredientListView.h"
 #import "LotroWSServices.h"
 #import "StringEncryption.h"
 #import "NSData+Base64.h"
 #import "StringEncryption.h"
 #import "MBProgressHUD.h"
 
-@implementation IngredientsListViewController
+@implementation ComponentIngredientListView
 
 @synthesize profession;
 @synthesize tier;
 @synthesize recipeName;
+@synthesize compIngName;
 
 @synthesize ingNames;
 @synthesize ingQtys;
@@ -27,9 +28,6 @@
 @synthesize ingsXp;
 @synthesize ingsSupplierCost;
 
-@synthesize ingController = _ingController;
-
-
 - (id)initWithStyle:(UITableViewStyle)style
 {
     style = UITableViewStyleGrouped;
@@ -38,11 +36,6 @@
         // Custom initialization
     }
     return self;
-}
-
-- (void)dealloc
-{
-    [super dealloc];
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,11 +57,6 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    UIBarButtonItem * newBackButton = [[UIBarButtonItem alloc] initWithTitle:@"Ingredients" style:UIBarButtonItemStyleBordered target:self action:nil];
-    self.navigationItem.backBarButtonItem = newBackButton;
-    [newBackButton release];
-    
 }
 
 - (void)viewDidUnload
@@ -80,7 +68,6 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    
     HUD = [[MBProgressHUD alloc] initWithView:self.navigationController.view];
     [self.navigationController.view addSubview:HUD];
 	
@@ -89,23 +76,33 @@
     HUD.detailsLabelText = @"from CraftingCalc.com";
 	
     [HUD show:YES];
-
+    
     LotroWSLotroCalc* service = [LotroWSLotroCalc service];
-    NSString *encRecipeName = [StringEncryption EncryptString: self.recipeName];
+    NSString *encRecipeName = [StringEncryption EncryptString: self.compIngName];
     service.logging = NO;
-    [service GetRecipeIngredients:self  action:@selector(GetRecipeIngredientsHandler:) recipeName:encRecipeName quantity:1 ];    
+    [service GetComponentIngredients:self  action:@selector(GetCompIngredientsHandler:) ingredientName:encRecipeName quantity:1 ];    
     
     [super viewWillAppear:animated];
     
     self.title = @"Loading...";
 }
-     
 
-- (void) GetRecipeIngredientsHandler: (id) value {
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+}
 
-    self.title = self.recipeName;    
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+}
+
+
+- (void) GetCompIngredientsHandler: (id) value {
+    
+    self.title = self.compIngName;    
     [HUD hide:YES];
-
+    
     // Handle errors
 	if([value isKindOfClass:[NSError class]]) {
 		//NSLog(@"%@", value);
@@ -113,8 +110,8 @@
         NSString *errMsg = [value localizedDescription];
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Error" 
-            message:errMsg delegate:self cancelButtonTitle:@"OK"
-            otherButtonTitles: nil];
+                                                        message:errMsg delegate:self cancelButtonTitle:@"OK"
+                                              otherButtonTitles: nil];
         [alert show];	
         [alert release];
         
@@ -128,11 +125,11 @@
  		//NSLog(@"%@", value);
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Error" 
-            message:value delegate:self cancelButtonTitle:@"OK"
-            otherButtonTitles: nil];
+                                                        message:value delegate:self cancelButtonTitle:@"OK"
+                                              otherButtonTitles: nil];
         [alert show];	
         [alert release];       
-       
+        
 		return;
 	}				
     
@@ -149,15 +146,15 @@
     if ([result count] == 0)
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Error" 
-            message:@"Unable to read recipe data" delegate:self cancelButtonTitle:@"OK"
-            otherButtonTitles: nil];
+                                                        message:@"Unable to read recipe data" delegate:self cancelButtonTitle:@"OK"
+                                              otherButtonTitles: nil];
         [alert show];	
         [alert release];               
     }
-
+    
     for (LotroWSWebIngredient *ing in result) {
         //NSLog(@"%@", ing.IngredientName);
-
+        
         NSString *decName = [StringEncryption DecryptString:ing.IngredientName];
         //NSLog(@"dec = %@\n", dec);
         [newIngNameArray addObject:decName];  
@@ -198,22 +195,12 @@
     self.ingsXp = newIngXpArray;
     self.ingsSupplierCost = newIngSupplierCostArray;
     
-
+    
     [self.tableView reloadData];
     
     //[activityView removeFromSuperview];
 }
-     
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-}
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-}
 
 - (void)viewDidDisappear:(BOOL)animated
 {
@@ -223,7 +210,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return YES;
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark - Table view data source
@@ -234,9 +221,8 @@
         return 0;
     
     // Return the number of sections.
-    return [self.ingNames count] + 1;
+    return [self.ingNames count];
 }
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -254,39 +240,22 @@
         NSString *cost = [self.ingsSupplierCost objectAtIndex:section];
         if ([cost isEqualToString: @"Cost: 0"])
             return 2;
-
+        
         return 3;
     }
-    
-//    if (section == 0)
-//    // Return the number of rows in the section.
-//        return [self.ingNames count];
-//    else
-//        return 1;
 }
-
-
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if (0 == [self.ingNames count])
         return @"";
-
-    if(section == [self.ingNames count])
-        return @"Materials Breakdown";
-    
+   
     return [self.ingNames objectAtIndex:section];
-
-//    if(section == 0)
-//        return @"Required Ingredients";
-//    else
-//        return @"all";
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"ingCell";
+    static NSString *CellIdentifier = @"compCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
@@ -300,86 +269,51 @@
     
     NSUInteger secNum = [indexPath section];
     
-    //if ([indexPath section] == nil)
-      //  return cell;
     
-    //NSLog(@"section = %@\n", sec);
-   
-
-    
-    //if (sec == nil)
-      //  return cell;
-
- 
     if (secNum < [self.ingNames count])
     {
         NSString *isCrafted = [self.ingsCrafted objectAtIndex:secNum];
         int rowNum = indexPath.row;
         
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
         if([isCrafted isEqualToString: @"True"])
         {
             if(0 == rowNum)
             {
-                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 cell.textLabel.text = [self.ingTypes objectAtIndex: secNum];                
             }
             else if (1 == rowNum)
             {
                 cell.textLabel.text = [self.ingQtys objectAtIndex:secNum];
-                cell.selectionStyle = UITableViewCellSelectionStyleNone;
- 
+                
             }
             else if (2 == rowNum)
             {
                 cell.textLabel.text = [self.ingTiers objectAtIndex:secNum];
-                cell.selectionStyle = UITableViewCellSelectionStyleNone;           
             }
             else if (3 == rowNum)
             {
                 cell.textLabel.text = [self.ingsXp objectAtIndex:secNum];
-                cell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
-
+            
         }
         else
         {
             if(0 == rowNum)
             {
                 cell.textLabel.text = [self.ingTypes objectAtIndex:secNum];
-                cell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
             else if (1 == rowNum)
             {
                 cell.textLabel.text = [self.ingQtys objectAtIndex:secNum];
-                cell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
             else if (2 == rowNum)
             {
                 cell.textLabel.text = [self.ingsSupplierCost objectAtIndex:secNum];
-                cell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
         }
     }
-    else
-    {
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.textLabel.text = @"Show all required mats";        
-    }
     
-//    if(indexPath.section == 0)
-//    {
-//        
-//        cell.textLabel.text = [self.ingNames objectAtIndex:[indexPath row]];
-//        cell.detailTextLabel.text = [self.ingQtys objectAtIndex:[indexPath row]];                
-//    }
-//    else
-//    {
-//        cell.textLabel.text = @"Show required mats";
-//    }
-    
-    //cell.textLabel.text = [self.ingNames objectAtIndex:[indexPath row]];
-    //cell.detailTextLabel.text = [self.ingQtys objectAtIndex:[indexPath row]];
-
     return cell;
 }
 
@@ -424,45 +358,16 @@
 
 #pragma mark - Table view delegate
 
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
     // Navigation logic may go here. Create and push another view controller.
+    /*
      <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
      // ...
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
-    
-    _ingController = [[ComponentIngredientListView alloc] init];
-
-    NSUInteger secNum = [indexPath section];
-    //NSUInteger row = [indexPath row];
-    NSString *newText = [self.ingNames objectAtIndex:secNum];
-    _ingController.navigationItem.title = newText;
-    
-    _ingController.profession = self.profession;
-    _ingController.tier = self.tier;
-    _ingController.recipeName = self.recipeName;
-    _ingController.compIngName = newText;
-    
-    
-    // Pass the selected object to the new view controller.
-    [self.navigationController pushViewController:(UITableViewController *)self.ingController animated:YES];    
-
-}
-
-
-#pragma mark -
-#pragma mark MBProgressHUDDelegate methods
-
-- (void)hudWasHidden {
-    // Remove HUD from screen when the HUD was hidded
-    [HUD removeFromSuperview];
-    [HUD release];
-	HUD = nil;
 }
 
 @end
