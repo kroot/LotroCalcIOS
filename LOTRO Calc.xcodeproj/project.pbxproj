@@ -27,7 +27,6 @@
 		2654A15E1352117100C397A0 /* LotroCalcAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A15D1352117100C397A0 /* LotroCalcAppDelegate.m */; };
 		2654A1611352117100C397A0 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2654A15F1352117100C397A0 /* MainWindow.xib */; };
 		2654A1641352117100C397A0 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1631352117100C397A0 /* RootViewController.m */; };
-		2654A1671352117100C397A0 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2654A1651352117100C397A0 /* RootViewController.xib */; };
 		2654A16E1352117200C397A0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2654A14D1352117100C397A0 /* UIKit.framework */; };
 		2654A16F1352117200C397A0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2654A14F1352117100C397A0 /* Foundation.framework */; };
 		2654A1701352117200C397A0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2654A1511352117100C397A0 /* CoreGraphics.framework */; };
@@ -67,8 +66,7 @@
 		267DB1681380733300940D8E /* TierViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 267DB1651380733300940D8E /* TierViewController.xib */; };
 		267DB1741380753A00940D8E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 267DB1731380753A00940D8E /* MBProgressHUD.m */; };
 		267DB1771380930600940D8E /* agent.png in Resources */ = {isa = PBXBuildFile; fileRef = 267DB1761380930600940D8E /* agent.png */; };
-		26957E2D1380413300220A7D /* LoadingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26957E2B1380413300220A7D /* LoadingViewController.m */; };
-		26957E2E1380413300220A7D /* LoadingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26957E2C1380413300220A7D /* LoadingViewController.xib */; };
+		269458621395E71C006A067A /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 269458611395E71C006A067A /* RootViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +88,7 @@
 		2610DD721376348C00E23057 /* RecipeListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeListViewController.m; sourceTree = "<group>"; };
 		2610DD731376348C00E23057 /* RecipeListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeListViewController.xib; sourceTree = "<group>"; };
 		2610DD79137734C700E23057 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "iPad/en.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
+		261BD04A13E4D0F3008F7712 /* LOTRO CalcTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LOTRO CalcTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		262EA9021378ED420030F6D4 /* Anvil29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Anvil29.png; sourceTree = "<group>"; };
 		262EA9031378ED420030F6D4 /* Anvil57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Anvil57.png; sourceTree = "<group>"; };
 		262EA9041378ED420030F6D4 /* Anvil72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Anvil72.png; sourceTree = "<group>"; };
@@ -110,8 +109,6 @@
 		2654A1601352117100C397A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		2654A1621352117100C397A0 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		2654A1631352117100C397A0 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		2654A1661352117100C397A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
-		2654A16D1352117200C397A0 /* LOTRO CalcTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LOTRO CalcTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2654A1751352117200C397A0 /* LOTRO CalcTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LOTRO CalcTests-Info.plist"; sourceTree = "<group>"; };
 		2654A1771352117200C397A0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2654A1791352117200C397A0 /* LOTRO CalcTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LOTRO CalcTests-Prefix.pch"; sourceTree = "<group>"; };
@@ -181,9 +178,7 @@
 		267DB1721380753A00940D8E /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		267DB1731380753A00940D8E /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		267DB1761380930600940D8E /* agent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = agent.png; sourceTree = "<group>"; };
-		26957E2A1380413300220A7D /* LoadingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingViewController.h; sourceTree = "<group>"; };
-		26957E2B1380413300220A7D /* LoadingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingViewController.m; sourceTree = "<group>"; };
-		26957E2C1380413300220A7D /* LoadingViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingViewController.xib; sourceTree = "<group>"; };
+		269458611395E71C006A067A /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,7 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				2654A1491352117100C397A0 /* LOTRO Calc.app */,
-				2654A16D1352117200C397A0 /* LOTRO CalcTests.octest */,
+				261BD04A13E4D0F3008F7712 /* LOTRO CalcTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -262,12 +257,12 @@
 				2654A1991352127C00C397A0 /* Soap */,
 				2654A1B71352127C00C397A0 /* TouchXML */,
 				2654A1861352126900C397A0 /* Generated */,
-				2654A15F1352117100C397A0 /* MainWindow.xib */,
 				2654A15C1352117100C397A0 /* LotroCalcAppDelegate.h */,
 				2654A15D1352117100C397A0 /* LotroCalcAppDelegate.m */,
+				2654A15F1352117100C397A0 /* MainWindow.xib */,
 				2654A1621352117100C397A0 /* RootViewController.h */,
 				2654A1631352117100C397A0 /* RootViewController.m */,
-				2654A1651352117100C397A0 /* RootViewController.xib */,
+				269458611395E71C006A067A /* RootViewController.xib */,
 				2654A1541352117100C397A0 /* Supporting Files */,
 				2654A1E013527A8F00C397A0 /* TierViewController.h */,
 				2654A1E113527A8F00C397A0 /* TierViewController.m */,
@@ -278,9 +273,6 @@
 				267DB1621380733300940D8E /* IngredientsListViewController.h */,
 				267DB1631380733300940D8E /* IngredientsListViewController.m */,
 				267DB1641380733300940D8E /* IngredientsListViewController.xib */,
-				26957E2A1380413300220A7D /* LoadingViewController.h */,
-				26957E2B1380413300220A7D /* LoadingViewController.m */,
-				26957E2C1380413300220A7D /* LoadingViewController.xib */,
 			);
 			path = LotroCalc;
 			sourceTree = "<group>";
@@ -443,7 +435,7 @@
 			);
 			name = "LOTRO CalcTests";
 			productName = LotroCalcTests;
-			productReference = 2654A16D1352117200C397A0 /* LOTRO CalcTests.octest */;
+			productReference = 261BD04A13E4D0F3008F7712 /* LOTRO CalcTests.octest */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -476,7 +468,6 @@
 			files = (
 				2654A1581352117100C397A0 /* InfoPlist.strings in Resources */,
 				2654A1611352117100C397A0 /* MainWindow.xib in Resources */,
-				2654A1671352117100C397A0 /* RootViewController.xib in Resources */,
 				2610DD751376348C00E23057 /* RecipeListViewController.xib in Resources */,
 				2610DD7A137734C700E23057 /* MainWindow-iPad.xib in Resources */,
 				262EA9071378ED420030F6D4 /* Anvil29.png in Resources */,
@@ -486,10 +477,10 @@
 				262EA90B1378ED420030F6D4 /* Anvil512.png in Resources */,
 				262EA90E1378F0C50030F6D4 /* Anvil50.png in Resources */,
 				262EA90F1378F0C50030F6D4 /* Anvil58.png in Resources */,
-				26957E2E1380413300220A7D /* LoadingViewController.xib in Resources */,
 				267DB1671380733300940D8E /* IngredientsListViewController.xib in Resources */,
 				267DB1681380733300940D8E /* TierViewController.xib in Resources */,
 				267DB1771380930600940D8E /* agent.png in Resources */,
+				269458621395E71C006A067A /* RootViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,7 +549,6 @@
 				2610DD741376348C00E23057 /* RecipeListViewController.m in Sources */,
 				2609ED771377640A008CA0EC /* NSData+Base64.m in Sources */,
 				2609ED781377640A008CA0EC /* StringEncryption.m in Sources */,
-				26957E2D1380413300220A7D /* LoadingViewController.m in Sources */,
 				267DB1661380733300940D8E /* IngredientsListViewController.m in Sources */,
 				267DB1741380753A00940D8E /* MBProgressHUD.m in Sources */,
 			);
@@ -607,14 +597,6 @@
 			name = MainWindow.xib;
 			sourceTree = "<group>";
 		};
-		2654A1651352117100C397A0 /* RootViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2654A1661352117100C397A0 /* en */,
-			);
-			name = RootViewController.xib;
-			sourceTree = "<group>";
-		};
 		2654A1761352117200C397A0 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -640,7 +622,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				PROVISIONING_PROFILE = "E6012B14-B521-49D3-B356-8EA95C368EE4";
+				PROVISIONING_PROFILE = "645DE016-3253-46C4-AE94-616D8ACF4859";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -657,7 +639,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "E6012B14-B521-49D3-B356-8EA95C368EE4";
+				PROVISIONING_PROFILE = "645DE016-3253-46C4-AE94-616D8ACF4859";
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -666,7 +648,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kenneth Root (E4JU4V2CQC)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -681,7 +664,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "LOTRO Calc";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E6012B14-B521-49D3-B356-8EA95C368EE4";
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -691,6 +675,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kenneth Root (E4JU4V2CQC)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -705,6 +690,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "LOTRO Calc";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E6012B14-B521-49D3-B356-8EA95C368EE4";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
