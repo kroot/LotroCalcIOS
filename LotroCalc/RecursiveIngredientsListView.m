@@ -19,13 +19,22 @@
 @synthesize tier;
 @synthesize recipeName;
 
-@synthesize ingNames;
-@synthesize ingQtys;
-@synthesize ingTypes;
-@synthesize ingsCrafted;
-@synthesize ingTiers;
-@synthesize ingsXp;
-@synthesize ingsSupplierCost;
+@synthesize CraftedIngs;
+@synthesize GatheredIngs;
+@synthesize VendorIngs;
+
+@synthesize CraftedPanel;
+@synthesize GatheredPanel;
+@synthesize VendorPanel;
+@synthesize PanelCount;
+
+//@synthesize ingNames;
+//@synthesize ingQtys;
+//@synthesize ingTypes;
+//@synthesize ingsCrafted;
+//@synthesize ingTiers;
+//@synthesize ingsXp;
+//@synthesize ingsSupplierCost;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -124,14 +133,18 @@
     
  	//if([value isKindOfClass:[LotroWSWebIngredient class]]) {
     NSMutableArray* result = (NSMutableArray*)value;
-    NSMutableArray *newIngNameArray = [[NSMutableArray alloc] init];
-    NSMutableArray *newIngQtyArray = [[NSMutableArray alloc] init];
-    NSMutableArray *newIngTypeArray = [[NSMutableArray alloc] init];
-    NSMutableArray *newIngCraftedArray = [[NSMutableArray alloc] init];
-    NSMutableArray *newIngTierArray = [[NSMutableArray alloc] init];
-    NSMutableArray *newIngXpArray = [[NSMutableArray alloc] init];
-    NSMutableArray *newIngSupplierCostArray = [[NSMutableArray alloc] init];
-    
+//    NSMutableArray *newIngNameArray = [[NSMutableArray alloc] init];
+//    NSMutableArray *newIngQtyArray = [[NSMutableArray alloc] init];
+//    NSMutableArray *newIngTypeArray = [[NSMutableArray alloc] init];
+//    NSMutableArray *newIngCraftedArray = [[NSMutableArray alloc] init];
+//    NSMutableArray *newIngTierArray = [[NSMutableArray alloc] init];
+//    NSMutableArray *newIngXpArray = [[NSMutableArray alloc] init];
+//    NSMutableArray *newIngSupplierCostArray = [[NSMutableArray alloc] init];
+
+    NSMutableArray *newCraftedIngsArray = [[NSMutableArray alloc] init];
+    NSMutableArray *newGatheredIngsArray = [[NSMutableArray alloc] init];
+    NSMutableArray *newVendorIngsArray = [[NSMutableArray alloc] init];
+
     if ([result count] == 0)
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Error" 
@@ -142,6 +155,23 @@
     }
     
     for (LotroWSWebIngredient *ing in result) {
+        
+        ing.IngredientType = [StringEncryption DecryptString:ing.IngredientType];
+        ing.IngredientName = [StringEncryption DecryptString:ing.IngredientName];
+        ing.Tier = [StringEncryption DecryptString:ing.Tier];
+        
+  
+        if(ing.IsCrafted)
+            [newCraftedIngsArray addObject:ing];
+        
+        else if([ing.IngredientType isEqualToString:@"Supplier"] || 
+               [ing.IngredientType isEqualToString:@"Vendor"])
+                    [newVendorIngsArray addObject:ing];               
+        else
+            [newGatheredIngsArray addObject:ing];
+           
+        
+        /*
         //NSLog(@"%@", ing.IngredientName);
         
         NSString *decName = [StringEncryption DecryptString:ing.IngredientName];
@@ -173,16 +203,38 @@
         
         
         NSString *cost = [@"Cost: " stringByAppendingFormat:@"%d", ing.SupplierCost];
-        [newIngSupplierCostArray addObject:cost];       
+        [newIngSupplierCostArray addObject:cost];   
+         */
         
     }	
-    self.ingNames = newIngNameArray;
-    self.ingQtys = newIngQtyArray;
-    self.ingTypes = newIngTypeArray;
-    self.ingTiers = newIngTierArray;
-    self.ingsCrafted = newIngCraftedArray;
-    self.ingsXp = newIngXpArray;
-    self.ingsSupplierCost = newIngSupplierCostArray;
+    
+    self.CraftedIngs = newCraftedIngsArray;
+    self.GatheredIngs = newGatheredIngsArray;
+    self.VendorIngs = newVendorIngsArray;
+    
+    NSInteger pnlCount = 0;
+    CraftedPanel = -1;
+    GatheredPanel = -1;
+    VendorPanel = -1;
+    
+    if ([CraftedIngs count] > 0)
+        CraftedPanel = pnlCount++;
+    
+    if ([GatheredIngs count] > 0)
+        GatheredPanel = pnlCount++;
+    
+    if ([VendorIngs count] > 0)
+        VendorPanel = pnlCount++;
+    
+    PanelCount = pnlCount;
+    
+//    self.ingNames = newIngNameArray;
+//    self.ingQtys = newIngQtyArray;
+//    self.ingTypes = newIngTypeArray;
+//    self.ingTiers = newIngTierArray;
+//    self.ingsCrafted = newIngCraftedArray;
+//    self.ingsXp = newIngXpArray;
+//    self.ingsSupplierCost = newIngSupplierCostArray;
     
     
     [self.tableView reloadData];
@@ -216,32 +268,42 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    if (0 == [self.ingNames count])
-        return 0;
-    
     // Return the number of sections.
-    return [self.ingNames count];
+    return PanelCount;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (0 == [self.ingNames count])
-        return 0;
-    
-    if(section == [self.ingNames count])
-        return 1;
-    
-    NSString *isCrafted = [self.ingsCrafted objectAtIndex:section];
-    if([isCrafted isEqualToString: @"True"])
-        return 4;
-    else
+    if (section == CraftedPanel)
     {
-        NSString *cost = [self.ingsSupplierCost objectAtIndex:section];
-        if ([cost isEqualToString: @"Cost: 0"])
-            return 2;
-        
-        return 3;
+        return [CraftedIngs count];
     }
+    else if (section == GatheredPanel)
+    {
+        return [GatheredIngs count];
+    }
+    else if (section == VendorPanel)
+    {
+        return [VendorIngs count];
+    }
+    return 0;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == CraftedPanel)
+    {
+        return @"Crafted Ingredients";
+    }
+    else if (section == GatheredPanel)
+    {
+        return @"Gathered Ingredients";
+    }
+    else if (section == VendorPanel)
+    {
+        return @"Vendor Ingredients";
+    }
+    return @"";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -259,52 +321,43 @@
         return cell;    
     
     NSUInteger secNum = [indexPath section];
+    int rowNum = indexPath.row;
     
-    
-    if (secNum < [self.ingNames count])
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    if (secNum == CraftedPanel)
     {
-        NSString *isCrafted = [self.ingsCrafted objectAtIndex:secNum];
-        int rowNum = indexPath.row;
+        LotroWSWebIngredient *ing = [self.CraftedIngs objectAtIndex: rowNum];
+        cell.textLabel.text = ing.IngredientName; 
         
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-        if([isCrafted isEqualToString: @"True"])
-        {
-            if(0 == rowNum)
-            {
-                cell.textLabel.text = [self.ingTypes objectAtIndex: secNum];                
-            }
-            else if (1 == rowNum)
-            {
-                cell.textLabel.text = [self.ingQtys objectAtIndex:secNum];
-                
-            }
-            else if (2 == rowNum)
-            {
-                cell.textLabel.text = [self.ingTiers objectAtIndex:secNum];
-            }
-            else if (3 == rowNum)
-            {
-                cell.textLabel.text = [self.ingsXp objectAtIndex:secNum];
-            }
-            
-        }
-        else
-        {
-            if(0 == rowNum)
-            {
-                cell.textLabel.text = [self.ingTypes objectAtIndex:secNum];
-            }
-            else if (1 == rowNum)
-            {
-                cell.textLabel.text = [self.ingQtys objectAtIndex:secNum];
-            }
-            else if (2 == rowNum)
-            {
-                cell.textLabel.text = [self.ingsSupplierCost objectAtIndex:secNum];
-            }
-        }
+        NSString *subtitle = 
+            [@"Quantity: " stringByAppendingFormat:@"%d - Tier: ", ing.Quantity];
+        subtitle = 
+            [subtitle stringByAppendingString: ing.Tier];
+        
+        cell.detailTextLabel.text = subtitle;
     }
-
+    else if (secNum == GatheredPanel)
+    {
+        LotroWSWebIngredient *ing = [self.GatheredIngs objectAtIndex: rowNum];
+        cell.textLabel.text = ing.IngredientName; 
+        
+        NSString *subtitle = 
+            [@"Quantity: " stringByAppendingFormat:@"%d", ing.Quantity];
+         
+        cell.detailTextLabel.text = subtitle;            
+    }
+    else if (secNum == VendorPanel)
+    {
+        LotroWSWebIngredient *ing = [self.VendorIngs objectAtIndex: rowNum];
+        cell.textLabel.text = ing.IngredientName; 
+        
+        NSString *subtitle = 
+            [@"Quantity: " stringByAppendingFormat:@"%d - Cost: ", ing.Quantity];
+        subtitle = 
+            [subtitle stringByAppendingFormat:@"%d", ing.SupplierCost];
+        
+        cell.detailTextLabel.text = subtitle;             
+    }
     
     return cell;
 }

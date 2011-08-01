@@ -270,6 +270,7 @@
     NSUInteger secNum = [indexPath section];
     
     
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if (secNum < [self.ingNames count])
     {
         NSString *isCrafted = [self.ingsCrafted objectAtIndex:secNum];

@@ -440,6 +440,19 @@
     
     if (secNum < [self.ingNames count])
     {    
+        
+        NSString *isCrafted = [self.ingsCrafted objectAtIndex:secNum];
+        int rowNum = indexPath.row;
+        
+        if([isCrafted isEqualToString: @"True"])
+        {
+            if(0 == rowNum)
+            {                
+                // Pass the selected object to the new view controller.
+                [self.navigationController pushViewController:(UITableViewController *)self.ingController animated:YES];    
+           }
+        }
+        
         NSString *newText = [self.ingNames objectAtIndex:secNum];
         
         _ingController = [[ComponentIngredientListView alloc] init];
@@ -453,9 +466,9 @@
         _ingController.recipeName = self.recipeName;
         _ingController.compIngName = newText;
         
-        
-        // Pass the selected object to the new view controller.
-        [self.navigationController pushViewController:(UITableViewController *)self.ingController animated:YES];    
+//        
+//        // Pass the selected object to the new view controller.
+//        [self.navigationController pushViewController:(UITableViewController *)self.ingController animated:YES];    
     }
     else
     {
