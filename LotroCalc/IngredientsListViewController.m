@@ -310,9 +310,13 @@
     //if (sec == nil)
       //  return cell;
 
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.accessoryType = UITableViewCellAccessoryNone;
+
  
     if (secNum < [self.ingNames count])
     {
+        
         NSString *isCrafted = [self.ingsCrafted objectAtIndex:secNum];
         int rowNum = indexPath.row;
         
@@ -320,24 +324,21 @@
         {
             if(0 == rowNum)
             {
+                cell.selectionStyle = UITableViewCellSelectionStyleBlue; 
                 cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
                 cell.textLabel.text = [self.ingTypes objectAtIndex: secNum];                
             }
             else if (1 == rowNum)
             {
-                cell.textLabel.text = [self.ingQtys objectAtIndex:secNum];
-                cell.selectionStyle = UITableViewCellSelectionStyleNone;
- 
+                cell.textLabel.text = [self.ingQtys objectAtIndex:secNum]; 
             }
             else if (2 == rowNum)
             {
                 cell.textLabel.text = [self.ingTiers objectAtIndex:secNum];
-                cell.selectionStyle = UITableViewCellSelectionStyleNone;           
             }
             else if (3 == rowNum)
             {
                 cell.textLabel.text = [self.ingsXp objectAtIndex:secNum];
-                cell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
 
         }
@@ -346,22 +347,20 @@
             if(0 == rowNum)
             {
                 cell.textLabel.text = [self.ingTypes objectAtIndex:secNum];
-                cell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
             else if (1 == rowNum)
             {
                 cell.textLabel.text = [self.ingQtys objectAtIndex:secNum];
-                cell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
             else if (2 == rowNum)
             {
                 cell.textLabel.text = [self.ingsSupplierCost objectAtIndex:secNum];
-                cell.selectionStyle = UITableViewCellSelectionStyleNone;
             }
         }
     }
     else
     {
+        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.textLabel.text = @"Show all required mats";        
     }
@@ -448,23 +447,25 @@
         {
             if(0 == rowNum)
             {                
+                NSString *newText = [self.ingNames objectAtIndex:secNum];
+                
+                _ingController = [[ComponentIngredientListView alloc] init];
+                
+                //NSUInteger row = [indexPath row];
+                
+                _ingController.navigationItem.title = newText;
+                
+                _ingController.profession = self.profession;
+                _ingController.tier = self.tier;
+                _ingController.recipeName = self.recipeName;
+                _ingController.compIngName = newText;
+                
                 // Pass the selected object to the new view controller.
                 [self.navigationController pushViewController:(UITableViewController *)self.ingController animated:YES];    
            }
         }
         
-        NSString *newText = [self.ingNames objectAtIndex:secNum];
-        
-        _ingController = [[ComponentIngredientListView alloc] init];
 
-        //NSUInteger row = [indexPath row];
-
-        _ingController.navigationItem.title = newText;
-        
-        _ingController.profession = self.profession;
-        _ingController.tier = self.tier;
-        _ingController.recipeName = self.recipeName;
-        _ingController.compIngName = newText;
         
 //        
 //        // Pass the selected object to the new view controller.
