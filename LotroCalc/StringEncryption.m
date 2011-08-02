@@ -16,11 +16,13 @@ NSAssert1(X, Y, Z);
 #else
 #define LOGGING_FACILITY(X, Y)	\
 if(!(X)) {			\
+NSLog(Y);		\
 exit(-1);		\
 }					
 
 #define LOGGING_FACILITY1(X, Y, Z)	\
 if(!(X)) {				\
+NSLog(Y, Z);		\
 exit(-1);			\
 }						
 #endif
@@ -48,14 +50,13 @@ StringEncryption *crypto = [[[StringEncryption alloc] init] autorelease];
 {
 	StringEncryption *crypto = [[[StringEncryption alloc] init] autorelease];
 	//NSData *data = [crypto decrypt:[base64StringToDecrypt dataUsingEncoding:NSUTF8StringEncoding] key:[_key dataUsingEncoding:NSUTF8StringEncoding] padding: &padding];
-    NSData *data = [crypto decrypt:[NSData dataWithBase64EncodedString:base64StringToDecrypt] key:[_key dataUsingEncoding:NSUTF8StringEncoding] padding: &padding];	
-    
+    NSData *data = [crypto decrypt:[NSData dataWithBase64EncodedString:base64StringToDecrypt] key:[_key dataUsingEncoding:NSUTF8StringEncoding] padding: &padding];
+	
 	return [[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding] autorelease];
 }
 
 - (void)testSymmetricEncryption
 {
-    /*
 	NSLog(@"testing symmetric encrypt/decrypt ...");
 	NSString *_key = @"hello";
 	NSString *_secret = @"hello";
@@ -78,7 +79,6 @@ StringEncryption *crypto = [[[StringEncryption alloc] init] autorelease];
 	NSString *str = [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
 	NSLog(@"decrypted string: %@", str);
 	NSLog(@"test finished.");
-     */
 }
 
 - (NSData *)encrypt:(NSData *)plainText key:(NSData *)aSymmetricKey padding:(CCOptions *)pkcs7
@@ -119,7 +119,7 @@ StringEncryption *crypto = [[[StringEncryption alloc] init] autorelease];
     memset((void *) iv, 0x0, (size_t) sizeof(iv));
 	
     //NSLog(@"doCipher: plaintext: %@", plainText);
-//    NSLog(@"doCipher: key length: %d", [aSymmetricKey length]);
+    //NSLog(@"doCipher: key length: %d", [aSymmetricKey length]);
 	
     //LOGGING_FACILITY(plainText != nil, @"PlainText object cannot be nil." );
     //LOGGING_FACILITY(aSymmetricKey != nil, @"Symmetric key object cannot be nil." );
@@ -130,8 +130,9 @@ StringEncryption *crypto = [[[StringEncryption alloc] init] autorelease];
 	
     //LOGGING_FACILITY(plainTextBufferSize > 0, @"Empty plaintext passed in." );
 	
-//    NSLog(@"pkcs7: %d", *pkcs7);
+    //NSLog(@"pkcs7: %d", *pkcs7);
     // We don't want to toss padding on if we don't need to
+    /*
     if(encryptOrDecrypt == kCCEncrypt) {
         if(*pkcs7 != kCCOptionECBMode) {
             if((plainTextBufferSize % kChosenCipherBlockSize) == 0) {
@@ -143,6 +144,7 @@ StringEncryption *crypto = [[[StringEncryption alloc] init] autorelease];
     } else if(encryptOrDecrypt != kCCDecrypt) {
         NSLog(@"Invalid CCOperation parameter [%d] for cipher context.", *pkcs7 );
     } 
+     */
 	
     // Create and Initialize the crypto reference.
     ccStatus = CCCryptorCreate(encryptOrDecrypt,
