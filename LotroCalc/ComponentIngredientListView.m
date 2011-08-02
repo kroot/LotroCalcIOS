@@ -145,11 +145,14 @@
     
     if ([result count] == 0)
     {
+        return;
+        /*
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Error" 
                                                         message:@"Unable to read recipe data" delegate:self cancelButtonTitle:@"OK"
                                               otherButtonTitles: nil];
         [alert show];	
-        [alert release];               
+        [alert release];  
+         */
     }
     
     for (LotroWSWebIngredient *ing in result) {
