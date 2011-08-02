@@ -248,6 +248,7 @@
     }
 }
 
+/*
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if (0 == [self.ingNames count])
@@ -255,6 +256,43 @@
    
     return [self.ingNames objectAtIndex:section];
 }
+ */
+
+
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+	return 44.0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    
+    NSString *sectionTitle;
+    if (0 == [self.ingNames count])
+        sectionTitle = @"";
+    
+    else
+        sectionTitle =  [self.ingNames objectAtIndex:section];
+    
+    
+    UILabel * label = [[UILabel alloc] initWithFrame:CGRectZero];
+    label.text = sectionTitle;
+    
+	label.backgroundColor = [UIColor clearColor];
+	label.opaque = NO;
+	label.textColor = [UIColor blackColor];
+	label.highlightedTextColor = [UIColor whiteColor];
+	label.font = [UIFont boldSystemFontOfSize:20];
+	label.frame = CGRectMake(10.0, 0.0, 300.0, 44.0);
+    
+    // Create header view and add label as a subview
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 320, 100)];
+    [view autorelease];
+    [view addSubview:label];
+    
+    return view;
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {

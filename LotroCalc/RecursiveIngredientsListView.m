@@ -174,41 +174,6 @@
             [newGatheredIngsArray addObject:ing];
            
         
-        /*
-        //NSLog(@"%@", ing.IngredientName);
-        
-        NSString *decName = [StringEncryption DecryptString:ing.IngredientName];
-        //NSLog(@"dec = %@\n", dec);
-        [newIngNameArray addObject:decName];  
-        
-        NSString *qty = [@"Quantity: " stringByAppendingFormat:@"%d", ing.Quantity];
-        [newIngQtyArray addObject:qty];       
-        
-        NSString *decType = [@"Ingredient Type: " stringByAppendingFormat:@"%@", [StringEncryption DecryptString:ing.IngredientType]];
-        //NSLog(@"dec = %@\n", dec);
-        [newIngTypeArray addObject:decType];  
-        
-        if (ing.IsCrafted)
-            [newIngCraftedArray addObject:@"True"];  
-        else
-            [newIngCraftedArray addObject:@"False"];        
-        
-        if([ing Tier] != nil)
-        {
-            NSString *decTier = [@"Tier: " stringByAppendingFormat:@"%@", [StringEncryption DecryptString:ing.Tier]];
-            [newIngTierArray addObject:decTier];
-        }
-        else
-            [newIngTierArray addObject:@""];            
-        
-        NSString *xp = [@"Crafting XP: " stringByAppendingFormat:@"%d", ing.Xp];
-        [newIngXpArray addObject:xp];
-        
-        
-        NSString *cost = [@"Cost: " stringByAppendingFormat:@"%d", ing.SupplierCost];
-        [newIngSupplierCostArray addObject:cost];   
-         */
-        
     }	
     
     self.CraftedIngs = newCraftedIngsArray;
@@ -230,14 +195,6 @@
         VendorPanel = pnlCount++;
     
     PanelCount = pnlCount;
-    
-//    self.ingNames = newIngNameArray;
-//    self.ingQtys = newIngQtyArray;
-//    self.ingTypes = newIngTypeArray;
-//    self.ingTiers = newIngTierArray;
-//    self.ingsCrafted = newIngCraftedArray;
-//    self.ingsXp = newIngXpArray;
-//    self.ingsSupplierCost = newIngSupplierCostArray;
     
     
     [self.tableView reloadData];
@@ -292,6 +249,7 @@
     return 0;
 }
 
+/*
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     if (section == CraftedPanel)
@@ -308,6 +266,47 @@
     }
     return @"";
 }
+ */
+
+- (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+	return 44.0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    
+    NSString *sectionTitle;
+    if (section == CraftedPanel)
+        sectionTitle = @"Crafted Ingredients";
+    
+    else if (section == GatheredPanel)
+        sectionTitle = @"Gathered Ingredients";
+    
+    else if (section == VendorPanel)
+        sectionTitle =  @"Vendor Ingredients";
+    else
+    sectionTitle = @"";
+    
+    
+    UILabel * label = [[UILabel alloc] initWithFrame:CGRectZero];
+    label.text = sectionTitle;
+    
+	label.backgroundColor = [UIColor clearColor];
+	label.opaque = NO;
+	label.textColor = [UIColor blackColor];
+	label.highlightedTextColor = [UIColor whiteColor];
+	label.font = [UIFont boldSystemFontOfSize:20];
+	label.frame = CGRectMake(10.0, 0.0, 300.0, 44.0);
+    
+    // Create header view and add label as a subview
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 320, 100)];
+    [view autorelease];
+    [view addSubview:label];
+    
+    return view;
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
