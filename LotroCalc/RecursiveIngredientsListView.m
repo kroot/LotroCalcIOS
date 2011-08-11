@@ -28,13 +28,6 @@
 @synthesize VendorPanel;
 @synthesize PanelCount;
 
-//@synthesize ingNames;
-//@synthesize ingQtys;
-//@synthesize ingTypes;
-//@synthesize ingsCrafted;
-//@synthesize ingTiers;
-//@synthesize ingsXp;
-//@synthesize ingsSupplierCost;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -221,7 +214,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return YES;
 }
 
 #pragma mark - Table view data source
@@ -266,7 +259,8 @@
     }
     return @"";
 }
- */
+*/
+
 
 - (CGFloat) tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
