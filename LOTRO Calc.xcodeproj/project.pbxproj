@@ -12,6 +12,10 @@
 		2610DD741376348C00E23057 /* RecipeListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2610DD721376348C00E23057 /* RecipeListViewController.m */; };
 		2610DD751376348C00E23057 /* RecipeListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2610DD731376348C00E23057 /* RecipeListViewController.xib */; };
 		2610DD7A137734C700E23057 /* MainWindow-iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2610DD78137734C700E23057 /* MainWindow-iPad.xib */; };
+		261BD04F13E5DC9E008F7712 /* ComponentIngredientListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 261BD04D13E5DC9E008F7712 /* ComponentIngredientListView.m */; };
+		261BD05013E5DC9E008F7712 /* ComponentIngredientListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 261BD04E13E5DC9E008F7712 /* ComponentIngredientListView.xib */; };
+		261BD05413E5E9A4008F7712 /* RecursiveIngredientsListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 261BD05213E5E9A4008F7712 /* RecursiveIngredientsListView.m */; };
+		261BD05513E5E9A4008F7712 /* RecursiveIngredientsListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 261BD05313E5E9A4008F7712 /* RecursiveIngredientsListView.xib */; };
 		262EA9071378ED420030F6D4 /* Anvil29.png in Resources */ = {isa = PBXBuildFile; fileRef = 262EA9021378ED420030F6D4 /* Anvil29.png */; };
 		262EA9081378ED420030F6D4 /* Anvil57.png in Resources */ = {isa = PBXBuildFile; fileRef = 262EA9031378ED420030F6D4 /* Anvil57.png */; };
 		262EA9091378ED420030F6D4 /* Anvil72.png in Resources */ = {isa = PBXBuildFile; fileRef = 262EA9041378ED420030F6D4 /* Anvil72.png */; };
@@ -89,6 +93,12 @@
 		2610DD731376348C00E23057 /* RecipeListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecipeListViewController.xib; sourceTree = "<group>"; };
 		2610DD79137734C700E23057 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "iPad/en.lproj/MainWindow-iPad.xib"; sourceTree = "<group>"; };
 		261BD04A13E4D0F3008F7712 /* LOTRO CalcTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "LOTRO CalcTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		261BD04C13E5DC9E008F7712 /* ComponentIngredientListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComponentIngredientListView.h; sourceTree = "<group>"; };
+		261BD04D13E5DC9E008F7712 /* ComponentIngredientListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComponentIngredientListView.m; sourceTree = "<group>"; };
+		261BD04E13E5DC9E008F7712 /* ComponentIngredientListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComponentIngredientListView.xib; sourceTree = "<group>"; };
+		261BD05113E5E9A4008F7712 /* RecursiveIngredientsListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecursiveIngredientsListView.h; sourceTree = "<group>"; };
+		261BD05213E5E9A4008F7712 /* RecursiveIngredientsListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecursiveIngredientsListView.m; sourceTree = "<group>"; };
+		261BD05313E5E9A4008F7712 /* RecursiveIngredientsListView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RecursiveIngredientsListView.xib; sourceTree = "<group>"; };
 		262EA9021378ED420030F6D4 /* Anvil29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Anvil29.png; sourceTree = "<group>"; };
 		262EA9031378ED420030F6D4 /* Anvil57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Anvil57.png; sourceTree = "<group>"; };
 		262EA9041378ED420030F6D4 /* Anvil72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Anvil72.png; sourceTree = "<group>"; };
@@ -273,6 +283,12 @@
 				267DB1621380733300940D8E /* IngredientsListViewController.h */,
 				267DB1631380733300940D8E /* IngredientsListViewController.m */,
 				267DB1641380733300940D8E /* IngredientsListViewController.xib */,
+				261BD04C13E5DC9E008F7712 /* ComponentIngredientListView.h */,
+				261BD04D13E5DC9E008F7712 /* ComponentIngredientListView.m */,
+				261BD04E13E5DC9E008F7712 /* ComponentIngredientListView.xib */,
+				261BD05113E5E9A4008F7712 /* RecursiveIngredientsListView.h */,
+				261BD05213E5E9A4008F7712 /* RecursiveIngredientsListView.m */,
+				261BD05313E5E9A4008F7712 /* RecursiveIngredientsListView.xib */,
 			);
 			path = LotroCalc;
 			sourceTree = "<group>";
@@ -481,6 +497,8 @@
 				267DB1681380733300940D8E /* TierViewController.xib in Resources */,
 				267DB1771380930600940D8E /* agent.png in Resources */,
 				269458621395E71C006A067A /* RootViewController.xib in Resources */,
+				261BD05013E5DC9E008F7712 /* ComponentIngredientListView.xib in Resources */,
+				261BD05513E5E9A4008F7712 /* RecursiveIngredientsListView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -551,6 +569,8 @@
 				2609ED781377640A008CA0EC /* StringEncryption.m in Sources */,
 				267DB1661380733300940D8E /* IngredientsListViewController.m in Sources */,
 				267DB1741380753A00940D8E /* MBProgressHUD.m in Sources */,
+				261BD04F13E5DC9E008F7712 /* ComponentIngredientListView.m in Sources */,
+				261BD05413E5E9A4008F7712 /* RecursiveIngredientsListView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
