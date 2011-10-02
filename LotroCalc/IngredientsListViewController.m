@@ -138,6 +138,19 @@
     
  	//if([value isKindOfClass:[LotroWSWebIngredient class]]) {
     NSMutableArray* result = (NSMutableArray*)value;
+    
+    if ([result count] == 0)
+    {
+        return;
+        /*
+         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Error" 
+         message:@"Unable to read recipe data" delegate:self cancelButtonTitle:@"OK"
+         otherButtonTitles: nil];
+         [alert show];	
+         [alert release];  
+         */
+    }
+    
     NSMutableArray *newIngNameArray = [[NSMutableArray alloc] init];
     NSMutableArray *newIngQtyArray = [[NSMutableArray alloc] init];
     NSMutableArray *newIngTypeArray = [[NSMutableArray alloc] init];
@@ -146,17 +159,6 @@
     NSMutableArray *newIngXpArray = [[NSMutableArray alloc] init];
     NSMutableArray *newIngSupplierCostArray = [[NSMutableArray alloc] init];
     
-    if ([result count] == 0)
-    {
-        return;
-        /*
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Network Error" 
-            message:@"Unable to read recipe data" delegate:self cancelButtonTitle:@"OK"
-            otherButtonTitles: nil];
-        [alert show];	
-        [alert release];  
-         */
-    }
 
     for (LotroWSWebIngredient *ing in result) {
         //NSLog(@"%@", ing.IngredientName);
@@ -320,6 +322,7 @@
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(10, 10, 320, 100)];
     [view autorelease];
     [view addSubview:label];
+    [label release];
     
     return view;
 }

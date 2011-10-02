@@ -34,6 +34,7 @@
                   @"Artisan",
                   @"Master",
                   @"Supreme",
+                  @"Westfold",
                   nil
                   ];
     
