@@ -65,6 +65,7 @@
 		2654A1D81352127C00C397A0 /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1C31352127C00C397A0 /* CXMLNode_XPathExtensions.m */; };
 		2654A1DA13521AA400C397A0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2654A1D913521AA400C397A0 /* SystemConfiguration.framework */; };
 		2654A1E313527A8F00C397A0 /* TierViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2654A1E113527A8F00C397A0 /* TierViewController.m */; };
+		265D5197180B546300632771 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 265D5196180B546200632771 /* Default-568h@2x.png */; };
 		267DB1661380733300940D8E /* IngredientsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 267DB1631380733300940D8E /* IngredientsListViewController.m */; };
 		267DB1671380733300940D8E /* IngredientsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 267DB1641380733300940D8E /* IngredientsListViewController.xib */; };
 		267DB1681380733300940D8E /* TierViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 267DB1651380733300940D8E /* TierViewController.xib */; };
@@ -181,6 +182,7 @@
 		2654A1D913521AA400C397A0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		2654A1E013527A8F00C397A0 /* TierViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TierViewController.h; sourceTree = "<group>"; };
 		2654A1E113527A8F00C397A0 /* TierViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TierViewController.m; sourceTree = "<group>"; };
+		265D5196180B546200632771 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		267DB1621380733300940D8E /* IngredientsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IngredientsListViewController.h; sourceTree = "<group>"; };
 		267DB1631380733300940D8E /* IngredientsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IngredientsListViewController.m; sourceTree = "<group>"; };
 		267DB1641380733300940D8E /* IngredientsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IngredientsListViewController.xib; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 		2654A13E1352117000C397A0 = {
 			isa = PBXGroup;
 			children = (
+				265D5196180B546200632771 /* Default-568h@2x.png */,
 				2654A1531352117100C397A0 /* LotroCalc */,
 				2654A1731352117200C397A0 /* LotroCalcTests */,
 				2654A14C1352117100C397A0 /* Frameworks */,
@@ -459,6 +462,9 @@
 /* Begin PBXProject section */
 		2654A1401352117000C397A0 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+			};
 			buildConfigurationList = 2654A1431352117000C397A0 /* Build configuration list for PBXProject "LOTRO Calc" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -493,6 +499,7 @@
 				262EA90B1378ED420030F6D4 /* Anvil512.png in Resources */,
 				262EA90E1378F0C50030F6D4 /* Anvil50.png in Resources */,
 				262EA90F1378F0C50030F6D4 /* Anvil58.png in Resources */,
+				265D5197180B546300632771 /* Default-568h@2x.png in Resources */,
 				267DB1671380733300940D8E /* IngredientsListViewController.xib in Resources */,
 				267DB1681380733300940D8E /* TierViewController.xib in Resources */,
 				267DB1771380930600940D8E /* agent.png in Resources */,
@@ -631,7 +638,6 @@
 		2654A17E1352117200C397A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Kenneth Root (E4JU4V2CQC)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -641,7 +647,8 @@
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE = "645DE016-3253-46C4-AE94-616D8ACF4859";
 				SDKROOT = iphoneos;
 			};
@@ -650,14 +657,13 @@
 		2654A17F1352117200C397A0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Kenneth Root (E4JU4V2CQC)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "645DE016-3253-46C4-AE94-616D8ACF4859";
 				SDKROOT = iphoneos;
@@ -669,11 +675,12 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kenneth Root (E4JU4V2CQC)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LotroCalc/LOTRO Calc-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
 					/usr/include/libxml2,
 					./Generated,
@@ -681,7 +688,7 @@
 					./Soap,
 				);
 				INFOPLIST_FILE = "LotroCalc/LOTRO Calc-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "LOTRO Calc";
 				PROVISIONING_PROFILE = "";
@@ -696,10 +703,11 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Kenneth Root (E4JU4V2CQC)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Kenneth Root (Q9LK2S5URY)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LotroCalc/LOTRO Calc-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				HEADER_SEARCH_PATHS = (
 					/usr/include/libxml2,
 					./Generated,
@@ -707,7 +715,7 @@
 					./Soap,
 				);
 				INFOPLIST_FILE = "LotroCalc/LOTRO Calc-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = "LOTRO Calc";
 				PROVISIONING_PROFILE = "";
@@ -729,6 +737,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LotroCalcTests/LOTRO CalcTests-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "LotroCalcTests/LOTRO CalcTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",
@@ -751,6 +760,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LotroCalcTests/LOTRO CalcTests-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "LotroCalcTests/LOTRO CalcTests-Info.plist";
 				OTHER_LDFLAGS = (
 					"-framework",

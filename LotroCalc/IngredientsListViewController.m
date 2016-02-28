@@ -191,7 +191,7 @@
         [newIngXpArray addObject:xp];
         
         
-        NSString *cost = [@"Cost: " stringByAppendingFormat:@"%d", ing.SupplierCost];
+        NSString *cost = [@"Cost: " stringByAppendingFormat:@"%ld", ing.SupplierCost];
         [newIngSupplierCostArray addObject:cost];       
         
     }	

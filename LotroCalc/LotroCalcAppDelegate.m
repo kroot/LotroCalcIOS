@@ -29,6 +29,8 @@
     //_navigationController.title = @"Professions";
     
     self.window.rootViewController = self.navigationController;
+    //[self.window setRootViewController:self.navigationController];
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
